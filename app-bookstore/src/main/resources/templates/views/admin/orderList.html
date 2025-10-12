@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main_layout}">
+<th:block layout:fragment="css">
+    <link rel="stylesheet" href="/css/admin/list.css">
+</th:block>
+<div layout:fragment="content">
+    <main class="container">
+        <section class="contents">
+            <header class="text-center">
+                <h2>주문 내역 리스트</h2>
+            </header>
+            <section class="sch-box">
+                <ul class="sch-list">
+                    <!-- <li>
+                        <label class="d-inline-block">검색:</label>
+                        <select class="form-select d-inline-block w-auto" id="searchType">
+                            <option value="userId" selected>아이디</option>
+                            <option value="userName">이름</option>
+                        </select>
+                    </li> -->
+                    <li class="mx-3">
+                        <input type="text" class="form-control d-inline-block" id="searchText" placeholder="아이디 또는 이름">
+                    </li>
+                    <li class="mx-3">
+                        <select class="form-select" id="status" name="status">
+                            <option value="전체보기" selected>전체보기</option>
+                            <option value="주문완료">주문완료 보기</option>
+                            <option value="배송완료">배송완료 보기</option>
+                            <option value="주문취소">주문취소 보기</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-warning" onclick="search()">검색</button>
+                    </li>
+                    <!-- <li class="ms-auto">
+                        <button type="button" class="btn btn-primary" onclick="goCreateForm()">등록</button>
+                    </li> -->
+                </ul>
+            </section>
+            <section class="table-list">
+                <input type="hidden" id="page" name="page" th:value="${data.page}">
+                <input type="hidden" id="size" name="size" value="10">
+                <table class="admin-table">
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 15%;" />
+                        <col style="width: 15%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 20%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                    </colgroup>
+                    <thead class="dark">
+                        <tr>
+                            <th>주문번호</th>
+                            <th>주문자 아이디</th>
+                            <th>주문자 이름</th>
+                            <th>총액</th>
+                            <th>상태</th>
+                            <th>주문일시</th>
+                            <th>배송완료</th>
+                            <th>주문취소</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTbody">
+                        <tr th:each="item : ${data.content}"
+                            th:style="${#strings.equals(item.status, '주문취소') ? 'background-color: gray;' : (#strings.equals(item.status, '배송완료') ? 'background-color: forestgreen;' : '')}">
+                            <td>
+                                <a href="javascript:void(0)" th:onclick="goDetail([[${item.orderId}]])"
+                                    th:text="${item.orderId}"></a>
+                            </td>
+                            <!-- <td th:text="${item.orderId}"></td> -->
+                            <td th:text="${item.userId}"></td>
+                            <!-- <td>
+                                <a href="javascript:void(0)" th:onclick="goDetail([[${item.userId}]])"
+                                    th:text="${item.userId}"></a>
+                            </td> -->
+                            <td th:text="${item.userName}"></td>
+                            <td th:text="${item.totalPrice}"></td>
+                            <td th:text="${item.status}"></td>
+                            <td th:text="${#temporals.format(item.orderDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-outline-primary" th:if="${#strings.equals(item.status, '주문완료')}"
+                                    th:onclick="delivery([[${item.orderId}]])">배송하기</button>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-outline-secondary" th:if="${#strings.equals(item.status, '주문완료')}"
+                                    th:onclick="cancel([[${item.orderId}]])">취소하기</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center" id="pageArea" th:utext="${data.pageHTML}">
+                    </ul>
+                </nav>
+            </section>
+        </section>
+    </main>
+    <script>
+
+        function goDetail(bookId) {
+            location.href = `/admin/order/detail/${bookId}`;
+        }
+
+        const delivery = (orderId)=>{
+            if (confirm('해당 주문을 배송완료 상태로 변경하시겠습니까?')) {
+                updateStatus(orderId, '배송완료', '주문 상태가 배송완료로 변경되었습니다.');
+            }
+        }
+
+        const cancel = (orderId)=>{
+            if (confirm('해당 주문을 주문취소 상태로 변경하시겠습니까?')) {
+                updateStatus(orderId, '주문취소', '주문 상태가 주문취소로 변경되었습니다.');
+            }
+        }
+
+        const updateStatus = (orderId, newStatus, alertMessage)=>{
+            const dataParam = {
+                orderId: orderId,
+                newStatus: newStatus
+            }
+
+            const headers = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)
+                .then((resp) => {
+                    if (resp.data.resultCode === 200) {
+                        alert(alertMessage);
+                        location.href = '/admin/order/list';
+                    } else {
+                        alert('주문 상태 변경에 실패했습니다.');
+                    }
+                }).catch((err) => {
+                    // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                    //alert(err);
+                });
+        }
+
+        function movePage(page) {
+            $('#page').val(page);
+            getSearchData();
+        }
+
+        function makeSearchParam() {
+            return {
+                searchText: $('#searchText').val(),
+                status: $('#status').val(),
+                page: $('#page').val(),
+                size: $('#size').val(),
+            }
+        }
+
+        async function getSearchData() {
+            const res = await axios.get('/api/v1/admin/order/list', { params: makeSearchParam() });
+            drawList(res.data);
+        }
+
+        const columns = ['orderId', 'userId', 'userName', 'totalPrice', 'status', 'orderDate', 'delivery', 'cancel'];
+
+        function drawList(data) {
+            const orderTbody = $('#orderTbody');
+            const pageArea = $('#pageArea');
+
+            orderTbody.empty();
+            pageArea.empty();
+
+            $.each(data.content, (index, obj) => {
+
+                const tr = $('<tr></tr>');
+
+                if (obj.status === '주문취소') {   // 상태가 주문취소일 경우
+                    tr.css({ "background-color": "gray" });  // 배경 색깔 변경
+                } else if (obj.status === '배송완료') {   // 상태가 배송완료일 경우
+                    tr.css({ "background-color": "forestgreen" });  // 배경 색깔 변경하고 클릭 막기
+                }
+
+                let contents = '';
+                for (let key of columns) {     // key - value 로 이뤄진 객체에서 in 절을 쓰면 key 를 가져온다. 배열에서 of 절을 쓰면 그냥 값을 가져온다.
+                    contents = '';
+                    const td = $('<td></td>');
+
+                    if (key === 'delivery') {
+                        if (obj['status'] === '주문완료') {
+                            const btn = $('<button type="button" class="btn btn-outline-primary">배송하기</button>');
+                            contents = btn;
+                            td.addClass("text-center");
+                        }
+                    } else if (key === 'cancel') {
+                        if (obj['status'] === '주문완료') {
+                            const btn = $('<button type="button" class="btn btn-outline-secondary">취소하기</button>');
+                            contents = btn;
+                            td.addClass("text-center");
+                        }
+                    } else {
+                        contents = obj[key];
+                    }
+
+                    // if (key === 'userId') {
+                    //     const aTag = $('<a href="javascript:void(0)"></a>');
+                    //     aTag.on('click', () => goDetail(obj[key]));
+                    //     aTag.text(obj[key]);
+                    //     contents = aTag;
+                    // } else {
+                    //     contents = obj[key];
+                    // }
+                    td.append(contents);
+                    tr.append(td);
+                }
+                orderTbody.append(tr);
+            });
+
+            pageArea.append(data.pageHTML);
+        }
+
+        const search = () => {
+            const searchText = $('#searchText');
+            $('#page').val(0);
+
+            getSearchData();
+        }
+
+    </script>
+</div>
+
+</html>

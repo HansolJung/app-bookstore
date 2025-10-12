@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main_layout}">
+
+<th:block layout:fragment="css">
+    <style>
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table label {
+            margin-top: 4px;
+        }
+
+        input.form-control[readonly] {
+            background-color: #f8f8f8;
+        }
+
+        .carousel-img {
+            max-height: 720px;
+        }
+
+        .order-btn-box{
+            position: absolute; 
+            bottom: 0;
+            right: 0;
+        }
+
+        .btn-section {
+            width: 100%;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+    </style>
+</th:block>
+<div layout:fragment="content">
+    <main class="container d-flex justify-content-center vh-100">
+        <section class="w-75 h-75">
+            <header class="text-center mt-5">
+                <h2>도서 상세 정보</h2>
+            </header>
+            <input type="hidden" id="bookId" name="bookId" th:value="${vo.bookId}">
+            <section class="mt-5">
+                <section class="d-flex">
+                    <div style="width: 300px;">
+                        <p>카테고리 > [[${vo.category}]]</p>
+                    </div>
+                    <div class="btn-section">
+                        <button type="button" class="btn btn-success" sec:authorize="${hasRole('ROLE_ADMIN')}"
+                            onclick="goUpdate();">수정하기</button>
+                        <button type="button" class="btn btn-danger" sec:authorize="${hasRole('ROLE_ADMIN')}"
+                            onclick="deleteBook();">삭제하기</button>
+                    </div>
+                </section>
+                <div class="card mb-3" style="max-width: 100%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <!-- <img class="img-fluid rounded-start" th:src="/static/imgs/${vo.storedName}"
+                                th:alt="${vo.title}"> -->
+
+                            <div id="carouselExampleIndicators" class="carousel slide">
+                                <div class="carousel-indicators">
+
+                                    <button type="button" th:each="item, itemStat : ${vo.fileList}"
+                                        data-bs-target="#carouselExampleIndicators"
+                                        th:data-bs-slide-to="${itemStat.index}"
+                                        th:classappend="${item.mainYn} == 'Y' ? 'active' : ''"
+                                        aria-current="true"></button>
+
+
+                                    <!-- <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item carousel-img" th:each="item : ${vo.fileList}"
+                                        th:classappend="${item.mainYn} == 'Y' ? 'active' : ''">
+                                        <img th:src="|/static/imgs/${item.storedName}|" class="d-block w-100"
+                                            th:alt="${item.fileName}">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="card-title" th:text="${vo.title}"></h2>
+                                <p class="card-text"><small class="text-body-emphasis"
+                                        th:text="|${vo.title} 저자(글)|"></small></p>
+                                <p class="card-text"><small class="text-body-secondary">[[${vo.publisher}]] |
+                                        [[${vo.releaseDate}]]</small></p>
+                                <p class="card-text" th:text="|${#numbers.formatInteger(vo.price, 3, 'COMMA')}원|"></p>
+                                <p class="card-text" th:text="|재고: ${vo.stock}개|"></p>
+                            </div>
+                            <div class="card-body order-btn-box">
+                                <button type="button" class="btn btn-primary" th:onclick="goOrder([[${vo.bookId}]])">구매하기</button>
+                                <button type="button" class="btn btn-secondary" onclick="goList();">목록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">책 소개</h3>
+                        <p class="card-text">[[${vo.description}]]</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script>
+
+        const goUpdate = ()=>{
+            const bookId = $('#bookId').val();
+            location.href = `/book/update/${bookId}`;
+        }
+
+        const deleteBook = ()=>{
+            const isConfirm = confirm('해당 도서를 정말 삭제하시겠습니까?');
+            if (isConfirm) {
+                const bookId = $('#bookId').val();
+                axios.delete(`/api/v1/book/${bookId}`)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('도서가 삭제됐습니다.');
+                            location.href = '/book/list';
+                        } else {
+                            alert('도서 삭제에 실패했습니다.');
+                        }
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
+            }
+        }
+
+        const goOrder = (bookId)=>{
+            location.href = `/order/${bookId}`;
+        }
+
+        const goList = ()=>{
+            location.href = '/book/list';
+        }
+
+    </script>
+</div>
+
+</html>

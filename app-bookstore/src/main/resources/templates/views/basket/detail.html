@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main_layout}">
+
+<th:block layout:fragment="css">
+    <style>
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table label {
+            margin-top: 4px;
+        }
+
+        input.form-control[readonly] {
+            background-color: #f8f8f8;
+        }
+
+        .carousel-img {
+            max-height: 720px;
+        }
+
+        .order-btn-box{
+            position: absolute; 
+            bottom: 0;
+            right: 0;
+        }
+
+        .btn-section {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 15px;
+        }
+        
+        .card-body a {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #8f8f8f;
+            font-size: 20px;
+        }
+
+        .card-body a:hover {
+            color: #fc4e4e;
+        }
+    </style>
+</th:block>
+<div layout:fragment="content">
+    <main class="container d-flex justify-content-center vh-100">
+        <section class="w-75 h-75">
+            <header class="text-center mt-5">
+                <h2>나의 장바구니</h2>
+            </header>
+            <section class="mt-5">
+                <input type="hidden" id="userId" name="userId" th:value="${userId}">
+                <section class="d-flex" th:if="${not #lists.isEmpty(vo)}">
+                    <div class="btn-section">
+                        <h2 th:text="|총합 ${#numbers.formatInteger(totalPrice, 3, 'COMMA')}원|"></h2>
+                        <div>
+                            <button type="button" class="btn btn-outline-primary" th:onclick="order([[${userId}]])">주문하기</button>
+                            <button type="button" class="btn btn-outline-secondary" th:onclick="empty([[${userId}]])">비우기</button>
+                        </div>
+                    </div>
+                </section>
+                <div th:if="${#lists.isEmpty(vo)}" class="text-center">
+                    <h3>장바구니에 넣은 도서가 없습니다.</h3>
+                </div>
+                <div class="card mb-3" style="max-width: 100%;" th:each="basketItem : ${vo}">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <!-- <img class="img-fluid rounded-start" th:src="/static/imgs/${vo.storedName}"
+                                th:alt="${vo.title}"> -->
+
+                            <div class="carousel-item carousel-img active">
+                                <img th:src="|/static/imgs/thumb/${basketItem.book.fileThumbName}|" class="d-block w-100"
+                                    th:alt="${basketItem.book.fileName}">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <a href="javascript:void(0);" th:onclick="|del([[${basketItem.basketId}]])|">
+                                    <i class="fa-regular fa-circle-xmark"></i> <!-- font-awesome 사용 -->
+                                </a>
+                                <h2 class="card-title" th:text="${basketItem.book.title}"></h2>
+                                <p class="card-text"><small class="text-body-emphasis"
+                                        th:text="|${basketItem.book.title} 저자(글)|"></small></p>
+                                <p class="card-text"><small class="text-body-secondary">[[${basketItem.book.publisher}]] |
+                                        [[${basketItem.book.releaseDate}]]</small></p>
+                                <p class="card-text" th:text="|개당 ${#numbers.formatInteger(basketItem.book.price, 3, 'COMMA')}원|"></p>
+                                <hr>
+                                <h3 class="card-title" th:text="|${basketItem.quantity}개 저장|"></h3>
+                                <h3 class="card-title" th:text="|총 ${#numbers.formatInteger(basketItem.totalPrice, 3, 'COMMA')}원|"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="d-flex justify-content-end">
+                <button type="button" onclick="goList();" class="btn btn-secondary">목록</button>
+            </section>
+        </section>
+    </main>
+    <script>
+
+        const order = (userId)=>{
+            if (confirm('장바구니에 있는 도서들을 전부 주문하시겠습니까?')) {
+                axios.post(`/api/v1/basket/order/${userId}`)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('장바구니에 있는 도서들을 주문했습니다.');
+                            location.href = `/basket/detail/${userId}`;
+                        } else {
+                            alert('장바구니에 있는 도서들 주문에 실패했습니다.');
+                        }
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
+            }
+        }
+
+        const del = (basketId)=>{
+            if (confirm('해당 도서를 장바구니에서 삭제하시겠습니까?')) {
+                const userId = $('#userId').val();
+                axios.delete(`/api/v1/basket/${basketId}`)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('장바구니에서 삭제했습니다.');
+                            location.href = `/basket/detail/${userId}`;
+                        } else {
+                            alert('삭제에 실패했습니다.');
+                        }
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
+            }
+        }
+
+        const empty = (userId)=>{
+            if (confirm('장바구니를 전부 비우시겠습니까?')) {
+                axios.delete(`/api/v1/basket/empty/${userId}`)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('장바구니를 성공적으로 비웠습니다.');
+                            location.href = `/basket/detail/${userId}`;
+                        } else {
+                            alert('장바구니 비우기에 실패했습니다.');
+                        }
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
+            }
+        }
+
+        const updateStatus = (orderId, newStatus, alertMessage)=>{
+            const dataParam = {
+                orderId: orderId,
+                newStatus: newStatus
+            }
+
+            const headers = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)
+                .then((resp) => {
+                    if (resp.data.resultCode === 200) {
+                        alert(alertMessage);
+                        location.href = `/admin/order/detail/${orderId}`;
+                    } else {
+                        alert('주문 상태 변경에 실패했습니다.');
+                    }
+                }).catch((err) => {
+                    // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                    //alert(err);
+                });
+        }
+
+        const goList = ()=>{
+            location.href = '/book/list';
+        }
+
+    </script>
+</div>
+
+</html>

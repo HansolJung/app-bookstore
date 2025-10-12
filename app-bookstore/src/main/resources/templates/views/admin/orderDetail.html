@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main_layout}">
+
+<th:block layout:fragment="css">
+    <style>
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table label {
+            margin-top: 4px;
+        }
+
+        input.form-control[readonly] {
+            background-color: #f8f8f8;
+        }
+
+        .carousel-img {
+            max-height: 720px;
+        }
+
+        .order-btn-box{
+            position: absolute; 
+            bottom: 0;
+            right: 0;
+        }
+
+        .btn-section {
+            width: 100%;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+    </style>
+</th:block>
+<div layout:fragment="content">
+    <main class="container d-flex justify-content-center vh-100">
+        <section class="w-75 h-75">
+            <header class="text-center mt-5">
+                <h2>주문 상세 정보</h2>
+            </header>
+            <input type="hidden" id="orderId" name="orderId" th:value="${vo.orderId}">
+            <section class="mt-5">
+                <section class="d-flex">
+                    <div class="btn-section">
+                        <button type="button" class="btn btn-outline-primary" sec:authorize="${hasRole('ROLE_ADMIN')}"
+                            th:if="${#strings.equals(vo.status, '주문완료')}" th:onclick="delivery([[${vo.orderId}]])">배송하기</button>
+                        <button type="button" class="btn btn-outline-secondary" sec:authorize="${hasRole('ROLE_ADMIN')}"
+                            th:if="${#strings.equals(vo.status, '주문완료')}" th:onclick="cancel([[${vo.orderId}]])">취소하기</button>
+                    </div>
+                </section>
+                <div class="card" style="max-width: 100%;">
+                    <div class="card-header" th:text="|주문상태: ${vo.status}|">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" th:text="|유저 아이디: ${vo.userId}|"></li>
+                        <li class="list-group-item" th:text="|주문일자: ${#temporals.format(vo.orderDate, 'yyyy-MM-dd HH:mm:ss')}|"></li>
+                        <li class="list-group-item" th:text="|총액: ${#numbers.formatInteger(vo.totalPrice, 3, 'COMMA')}원|"></li>
+                    </ul>
+                </div>
+                <header class="text-center mt-5">
+                    <h2>주문한 도서들</h2>
+                </header>
+                <div class="card mb-3" style="max-width: 100%;" th:each="orderItem : ${vo.itemList}">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <!-- <img class="img-fluid rounded-start" th:src="/static/imgs/${vo.storedName}"
+                                th:alt="${vo.title}"> -->
+
+                            <div class="carousel-item carousel-img" th:each="item : ${orderItem.book.fileList}"
+                                th:classappend="${item.mainYn} == 'Y' ? 'active' : ''">
+                                <img th:src="|/static/imgs/${item.storedName}|" class="d-block w-100"
+                                    th:alt="${item.fileName}">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="card-title" th:text="${orderItem.book.title}"></h2>
+                                <p class="card-text"><small class="text-body-emphasis"
+                                        th:text="|${orderItem.book.title} 저자(글)|"></small></p>
+                                <p class="card-text"><small class="text-body-secondary">[[${orderItem.book.publisher}]] |
+                                        [[${orderItem.book.releaseDate}]]</small></p>
+                                <p class="card-text" th:text="|개당 ${#numbers.formatInteger(orderItem.book.price, 3, 'COMMA')}원|"></p>
+                                <hr>
+                                <h2 class="card-title" th:text="|${orderItem.quantity}개 구매|"></h2>
+                                <h2 class="card-title" th:text="|총 ${#numbers.formatInteger(orderItem.totalPrice, 3, 'COMMA')}원|"></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="d-flex justify-content-end">
+                <button type="button" onclick="goList();" class="btn btn-secondary">목록</button>
+            </section>
+        </section>
+    </main>
+    <script>
+
+        const delivery = (orderId)=>{
+            if (confirm('해당 주문을 배송완료 상태로 변경하시겠습니까?')) {
+                updateStatus(orderId, '배송완료', '주문 상태가 배송완료로 변경되었습니다.');
+            }
+        }
+
+        const cancel = (orderId)=>{
+            if (confirm('해당 주문을 주문취소 상태로 변경하시겠습니까?')) {
+                updateStatus(orderId, '주문취소', '주문 상태가 주문취소로 변경되었습니다.');
+            }
+        }
+
+        const updateStatus = (orderId, newStatus, alertMessage)=>{
+            const dataParam = {
+                orderId: orderId,
+                newStatus: newStatus
+            }
+
+            const headers = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)
+                .then((resp) => {
+                    if (resp.data.resultCode === 200) {
+                        alert(alertMessage);
+                        location.href = `/admin/order/detail/${orderId}`;
+                    } else {
+                        alert('주문 상태 변경에 실패했습니다.');
+                    }
+                }).catch((err) => {
+                    // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                    //alert(err);
+                });
+        }
+
+        const goList = ()=>{
+            location.href = '/admin/order/list';
+        }
+
+    </script>
+</div>
+
+</html>

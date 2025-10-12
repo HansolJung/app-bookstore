@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main_layout}">
+
+<th:block layout:fragment="css">
+    <style>
+        .modal-dialog {
+            width: 70%;
+            max-width: 50%;
+        }
+
+        .thumbnail {
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            margin-top: 10vh;
+            align-items: center;
+        }
+
+        .content {
+            margin-top: 60px;
+        }
+
+        .btn-section {
+            width: 80%;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .book-canvas {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .row {
+            flex-wrap: nowrap;
+        }
+
+        .imgboard {
+            height: 500px;
+            overflow: auto;
+        }
+
+        span {
+            height: 30px;
+        }
+
+        .img-box {
+            text-align: center;
+        }
+
+        .book-canvas a {
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+        }
+
+        .book-canvas a:hover {
+            text-decoration: underline;
+        }
+
+        .sch-list{
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sch-box{
+            width: 80%;
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+    </style>
+</th:block>
+
+<div layout:fragment="content">
+    <section class="content">
+        <section class="container">
+            <header class="text-center mb-3">
+                <h2>도서 목록</h2>
+            </header>
+            <section class="sch-box">
+                <ul class="sch-list">
+                    <li class="mx-3">
+                        <input type="text" class="form-control d-inline-block" id="searchText" placeholder="도서명 또는 저자명">
+                    </li>
+                    <li class="mx-3">
+                        <select name="caId" id="caId" class="form-select">
+                            <option value="0" selected>전체보기</option>
+                            <option th:value="${item.caId}" th:each="item, itemStat : ${vo}" 
+                                th:text="${item.caName}"></option>
+                        </select>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-warning" onclick="search()">검색</button>
+                    </li>
+                    <li class="ms-auto">
+                        <button type="button" class="btn btn-primary" sec:authorize="${hasRole('ROLE_ADMIN')}"
+                            onclick="goCreate();">등록하기</button>
+                    </li>
+                </ul>
+            </section>
+            <input type="hidden" id="page" name="page" value="0">
+            <input type="hidden" id="size" name="size" value="10">
+            <section id="bookCanvas" class="book-canvas">
+            </section>
+            <section>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center" id="pageArea">
+                    </ul>
+                </nav>
+            </section>
+        </section>
+    </section>
+
+    <script th:inline="javascript">
+
+        function movePage(page) {
+            $('#page').val(page);
+            getData();
+        }
+
+        function makeSearchParam() {
+            return {
+                //searchType: $('#searchType').val(),
+                searchText: $('#searchText').val(),
+                caId: Number($('#caId').val()),
+                page: $('#page').val(),
+                size: $('#size').val(),
+            }
+        }
+
+        function getData() {
+            axios.get('/api/v1/book/list', {
+                params: makeSearchParam()
+            }).then((res) => {
+                drawBookList(res.data);
+            }).catch((err) => {
+                // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                //alert(err);
+            });
+        }
+
+        function drawBookList(data) {
+            const bookCanvas = $('#bookCanvas');
+            const pageArea = $('#pageArea');
+
+            bookCanvas.empty();
+            pageArea.empty();
+
+            $.each(data.content, (index, obj) => {
+                const html = makeBookBox(obj);
+                bookCanvas.append(html);
+            });
+
+            pageArea.append(data.pageHTML);
+        }
+
+        function makeBookBox(data) {
+
+            const rootDiv = $('<div class="card mb-3"></div>');
+            const rowDiv = $('<div class="row g-0"></div>');
+            const imgDiv = $('<div class="col-md-4"></div>');
+            const imgLink = $('<a href="javascript:void(0)"></a>');
+            // 이벤트 처리
+            imgLink.on('click', () => {
+                goDetail(data.bookId);
+            });
+
+            const img = $(`<img class="img-fluid rounded-start" src="/static/imgs/thumb/${data.fileThumbName}" alt="${data.title}">`);
+            const mainDiv = $('<div class="col-md-8"></div>');
+            const bodyDiv = $('<div class="card-body"></div>');
+            const titleLink = $('<a href="javascript:void(0)"></a>');
+            // 이벤트 처리
+            titleLink.on('click', () => {
+                goDetail(data.bookId);
+            });
+
+            const title = $('<h4 class="card-title"></h4>');
+            const author = $('<p class="card-text"><small class="text-body-emphasis"></small></p>');
+            const publisher = $('<p class="card-text"><small class="text-body-secondary"></small></p>');
+            const price = $('<p class="card-text"></p>');
+
+            title.text(data.title);
+            titleLink.append(title);
+            author.text(`${data.author} 저자(글)`);
+            publisher.text(`${data.publisher} | ${data.releaseDate}`);
+            const priceLocaleString = data.price.toLocaleString('ko-KR');
+            price.text(`${priceLocaleString}원`);
+
+            bodyDiv.append(titleLink);
+            bodyDiv.append(author);
+            bodyDiv.append(publisher);
+            bodyDiv.append(price);
+
+            mainDiv.append(bodyDiv);
+
+            imgLink.append(img);
+            imgDiv.append(imgLink);
+
+            rowDiv.append(imgDiv);
+            rowDiv.append(bodyDiv);
+
+            rootDiv.append(rowDiv);
+
+            return rootDiv;
+        }
+
+        function goCreate() {
+            location.href = '/book/create';
+        }
+
+        function goDetail(bookId) {
+            location.href = `/book/${bookId}`;
+        }
+
+        const search = ()=>{
+            getData();
+        }
+
+        $(document).ready(function () {
+            getData();
+        });
+    </script>
+</div>
+
+</html>
