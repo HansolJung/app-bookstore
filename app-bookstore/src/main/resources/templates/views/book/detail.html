@@ -21,8 +21,8 @@
             max-height: 720px;
         }
 
-        .order-btn-box{
-            position: absolute; 
+        .order-btn-box {
+            position: absolute;
             bottom: 0;
             right: 0;
         }
@@ -81,7 +81,7 @@
                                     <div class="carousel-item carousel-img" th:each="item : ${vo.fileList}"
                                         th:classappend="${item.mainYn} == 'Y' ? 'active' : ''">
                                         <img th:src="|/static/imgs/${item.storedName}|" class="d-block w-100"
-                                            th:alt="${item.fileName}">
+                                            th:alt="${item.fileName}" width="300" height="424">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
@@ -107,7 +107,8 @@
                                 <p class="card-text" th:text="|재고: ${vo.stock}개|"></p>
                             </div>
                             <div class="card-body order-btn-box">
-                                <button type="button" class="btn btn-primary" th:onclick="goOrder([[${vo.bookId}]])">구매하기</button>
+                                <button type="button" class="btn btn-primary"
+                                    th:onclick="goOrder([[${vo.bookId}]])">구매하기</button>
                                 <button type="button" class="btn btn-secondary" onclick="goList();">목록</button>
                             </div>
                         </div>
@@ -126,12 +127,12 @@
     </main>
     <script>
 
-        const goUpdate = ()=>{
+        const goUpdate = () => {
             const bookId = $('#bookId').val();
             location.href = `/book/update/${bookId}`;
         }
 
-        const deleteBook = ()=>{
+        const deleteBook = () => {
             const isConfirm = confirm('해당 도서를 정말 삭제하시겠습니까?');
             if (isConfirm) {
                 const bookId = $('#bookId').val();
@@ -150,11 +151,11 @@
             }
         }
 
-        const goOrder = (bookId)=>{
+        const goOrder = (bookId) => {
             location.href = `/order/${bookId}`;
         }
 
-        const goList = ()=>{
+        const goList = () => {
             location.href = '/book/list';
         }
 

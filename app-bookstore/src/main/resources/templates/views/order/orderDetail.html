@@ -21,8 +21,8 @@
             max-height: 720px;
         }
 
-        .order-btn-box{
-            position: absolute; 
+        .order-btn-box {
+            position: absolute;
             bottom: 0;
             right: 0;
         }
@@ -48,11 +48,13 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item" th:text="|유저 아이디: ${vo.userId}|"></li>
-                        <li class="list-group-item" th:text="|주문일자: ${#temporals.format(vo.orderDate, 'yyyy-MM-dd HH:mm:ss')}|"></li>
-                        <li class="list-group-item" th:text="|총액: ${#numbers.formatInteger(vo.totalPrice, 3, 'COMMA')}원|"></li>
+                        <li class="list-group-item"
+                            th:text="|주문일자: ${#temporals.format(vo.orderDate, 'yyyy-MM-dd HH:mm:ss')}|"></li>
+                        <li class="list-group-item"
+                            th:text="|총액: ${#numbers.formatInteger(vo.totalPrice, 3, 'COMMA')}원|"></li>
                     </ul>
                 </div>
-                <header class="text-center mt-5">
+                <header class="text-center mt-5 mb-5">
                     <h2>주문한 도서들</h2>
                 </header>
                 <div class="card mb-3" style="max-width: 100%;" th:each="orderItem : ${vo.itemList}">
@@ -72,25 +74,29 @@
                                 <h2 class="card-title" th:text="${orderItem.book.title}"></h2>
                                 <p class="card-text"><small class="text-body-emphasis"
                                         th:text="|${orderItem.book.title} 저자(글)|"></small></p>
-                                <p class="card-text"><small class="text-body-secondary">[[${orderItem.book.publisher}]] |
+                                <p class="card-text"><small class="text-body-secondary">[[${orderItem.book.publisher}]]
+                                        |
                                         [[${orderItem.book.releaseDate}]]</small></p>
-                                <p class="card-text" th:text="|개당 ${#numbers.formatInteger(orderItem.book.price, 3, 'COMMA')}원|"></p>
+                                <p class="card-text"
+                                    th:text="|개당 ${#numbers.formatInteger(orderItem.book.price, 3, 'COMMA')}원|"></p>
                                 <hr>
                                 <h2 class="card-title" th:text="|${orderItem.quantity}개 구매|"></h2>
-                                <h2 class="card-title" th:text="|총 ${#numbers.formatInteger(orderItem.totalPrice, 3, 'COMMA')}원|"></h2>
+                                <h2 class="card-title"
+                                    th:text="|총 ${#numbers.formatInteger(orderItem.totalPrice, 3, 'COMMA')}원|"></h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="d-flex justify-content-end">
-                <button type="button" onclick="goList();" class="btn btn-secondary">목록</button>
+                <button type="button" onclick="goList();" class="btn btn-secondary"
+                    style="margin-bottom: 15px;">목록</button>
             </section>
         </section>
     </main>
     <script>
 
-        const goList = ()=>{
+        const goList = () => {
             const userId = $('#userId').val();
             location.href = `/order/list/${userId}`;
         }

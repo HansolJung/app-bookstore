@@ -156,6 +156,26 @@ public class OrderService {
     }
 
     /**
+     * 나의 주문 상세정보 가져오기
+     * @param orderId 주문 아이디
+     * @param userId 유저 아이디
+     * @return
+     * @throws Exception
+     */
+    @Transactional(readOnly = true)
+    public OrderDTO.Detail getOrder(int orderId, String userId) throws Exception {
+
+        OrderDTO.Detail dto = OrderDTO.Detail.of(orderRepository.getOrder(orderId)
+            .orElseThrow(()-> new RuntimeException("주문 없음")));
+        
+        if (!dto.getUserId().equals(userId)) {   // 로그인 된 유저의 아이디와 주문자 아이디가 일치하지 않을 경우...
+            throw new RuntimeException("다른 사용자의 주문 상세정보는 볼 수 없습니다.");
+        }
+
+        return dto;
+    }
+
+    /**
      * 도서 주문하기
      * @param request
      * @return

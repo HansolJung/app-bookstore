@@ -1,257 +1,262 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-  layout:decorate="~{layout/main_layout}"
->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main_layout}">
 
 <th:block layout:fragment="css">
     <style>
-        .container{
+        .container {
             display: flex;
             flex-direction: column;
-            height : 90vh;
-            margin-top :  10vh;
+            height: 90vh;
+            margin-top: 10vh;
             align-items: center;
         }
-        
-        .write-form{
-            width:600px;
-            margin-top :20px;
+
+        .write-form {
+            width: 600px;
+            margin-top: 20px;
         }
-        
-        #contents{
+
+        #contents {
             resize: none;
-            width:500px;
-            height:200px;
+            width: 500px;
+            height: 200px;
             border-radius: 7px;
         }
-        
-        .table th{
+
+        .table th {
             text-align: right;
         }
     </style>
 </th:block>
-    <div layout:fragment="content">
-        <main class="container">
-            <header class="text-center">
-                <h2>도서 수정</h2>
-            </header>
-            <section class="write-form">
-                <form id="frm" action="/api/v1/book" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" id="bookId" name="bookId" th:value="${vo.bookId}">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <label for="title" class="form-label pt-2">제목</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="title" name="title" class="form-control" th:value="${vo.title}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="author" class="form-label pt-2">저자</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="author" name="author" class="form-control" th:value="${vo.author}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="publisher" class="form-label pt-2">출판사</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="publisher" name="publisher" class="form-control" th:value="${vo.publisher}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="caId" class="form-label pt-2">카테고리</label>
-                                </th>
-                                <td>
-                                    <select name="caId" id="caId" class="form-select">
-                                        <option th:value="${item.caId}" th:each="item, itemStat : ${categories}" 
-                                            th:text="${item.caName}"
-                                            th:selected="${item.caId} == ${vo.categoryId}"></option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="price" class="form-label pt-2">가격</label>
-                                </th>
-                                <td>
-                                    <input type="number" id="price" name="price" min="0" value="0" class="form-control" th:value="${vo.price}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="stock" class="form-label pt-2">재고</label>
-                                </th>
-                                <td>
-                                    <input type="number" id="stock" name="stock" min="0" value="0" class="form-control" th:value="${vo.stock}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="description" class="form-label pt-2">설명</label>
-                                </th>
-                                <td>
-                                    <textarea id="description" name="description" class="form-control" rows="10" th:text="${vo.description}"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="releaseDate" class="form-label pt-2">발행일</label>
-                                </th>
-                                <td>
-                                    <input type="date" id="releaseDate" name="releaseDate" class="form-control" th:value="${vo.releaseDate}">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="mainImage" class="form-label pt-2">메인 이미지</label>
-                                </th>
-                                <td>
-                                    <input type="file" id="mainImage" name="mainImage" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="image" class="form-label pt-2">기타 이미지</label>
-                                </th>
-                                <td>
-                                    <input type="file" id="image" name="image" class="form-control" multiple>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-            </section>
-            <section class="text-center">
-                <button type="button" class="btn btn-primary me-2" onclick="updateBook();">수정하기</button>
-                <button type="button" class="btn btn-secondary" onclick="goDetail();">취소</button>
-            </section>
-        </main>
-        <script>
+<div layout:fragment="content">
+    <main class="container">
+        <header class="text-center">
+            <h2>도서 수정</h2>
+        </header>
+        <section class="write-form">
+            <form id="frm" action="/api/v1/book" method="POST" enctype="multipart/form-data">
+                <input type="hidden" id="bookId" name="bookId" th:value="${vo.bookId}">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>
+                                <label for="title" class="form-label pt-2">제목</label>
+                            </th>
+                            <td>
+                                <input type="text" id="title" name="title" class="form-control" th:value="${vo.title}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="author" class="form-label pt-2">저자</label>
+                            </th>
+                            <td>
+                                <input type="text" id="author" name="author" class="form-control"
+                                    th:value="${vo.author}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="publisher" class="form-label pt-2">출판사</label>
+                            </th>
+                            <td>
+                                <input type="text" id="publisher" name="publisher" class="form-control"
+                                    th:value="${vo.publisher}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="caId" class="form-label pt-2">카테고리</label>
+                            </th>
+                            <td>
+                                <select name="caId" id="caId" class="form-select">
+                                    <option th:value="${item.caId}" th:each="item, itemStat : ${categories}"
+                                        th:text="${item.caName}" th:selected="${item.caId} == ${vo.categoryId}">
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="price" class="form-label pt-2">가격</label>
+                            </th>
+                            <td>
+                                <input type="number" id="price" name="price" min="0" value="0" class="form-control"
+                                    th:value="${vo.price}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="stock" class="form-label pt-2">재고</label>
+                            </th>
+                            <td>
+                                <input type="number" id="stock" name="stock" min="0" value="0" class="form-control"
+                                    th:value="${vo.stock}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="description" class="form-label pt-2">설명</label>
+                            </th>
+                            <td>
+                                <textarea id="description" name="description" class="form-control" rows="10"
+                                    th:text="${vo.description}"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="releaseDate" class="form-label pt-2">발행일</label>
+                            </th>
+                            <td>
+                                <input type="date" id="releaseDate" name="releaseDate" class="form-control"
+                                    th:value="${vo.releaseDate}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="mainImage" class="form-label pt-2">메인 이미지</label>
+                            </th>
+                            <td>
+                                <input type="file" id="mainImage" name="mainImage" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="image" class="form-label pt-2">기타 이미지</label>
+                            </th>
+                            <td>
+                                <input type="file" id="image" name="image" class="form-control" multiple>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </section>
+        <section class="text-center">
+            <button type="button" class="btn btn-primary me-2" onclick="updateBook();"
+                style="margin-bottom: 15px;">수정하기</button>
+            <button type="button" class="btn btn-secondary" onclick="goDetail();"
+                style="margin-bottom: 15px;">취소</button>
+        </section>
+    </main>
+    <script>
 
-            function validated() {
-                const title = document.querySelector('#title');
-                const author = document.querySelector('#author');
-                const publisher = document.querySelector('#publisher');
-                const price = document.querySelector('#price');
-                const stock = document.querySelector('#stock');
-                const description = document.querySelector('#description');
-                const releaseDate = document.querySelector('#releaseDate');
+        function validated() {
+            const title = document.querySelector('#title');
+            const author = document.querySelector('#author');
+            const publisher = document.querySelector('#publisher');
+            const price = document.querySelector('#price');
+            const stock = document.querySelector('#stock');
+            const description = document.querySelector('#description');
+            const releaseDate = document.querySelector('#releaseDate');
 
-                if (title.value.trim().length === 0) {
-                    alert('제목을 입력하십시오.');
-                    title.focus();
-                    return false;
-                }
-                
-                if (author.value.trim().length === 0) {
-                    alert('저자를 입력하십시오.');
-                    author.focus();
-                    return false;
-                }
+            if (title.value.trim().length === 0) {
+                alert('제목을 입력하십시오.');
+                title.focus();
+                return false;
+            }
 
-                if (publisher.value.trim().length === 0) {
-                    alert('출판사를 입력하십시오.');
-                    publisher.focus();
-                    return false;
-                }
+            if (author.value.trim().length === 0) {
+                alert('저자를 입력하십시오.');
+                author.focus();
+                return false;
+            }
 
-                if (price.value.trim().length === 0) {
-                    alert('가격을 입력하십시오.');
-                    price.focus();
-                    return false;
-                }
+            if (publisher.value.trim().length === 0) {
+                alert('출판사를 입력하십시오.');
+                publisher.focus();
+                return false;
+            }
 
-                if (stock.value.trim().length === 0) {
-                    alert('재고를 입력하십시오.');
-                    stock.focus();
-                    return false;
-                }
+            if (price.value.trim().length === 0) {
+                alert('가격을 입력하십시오.');
+                price.focus();
+                return false;
+            }
 
-                if (description.value.trim().length === 0) {
-                    alert('설명을 입력하십시오.');
-                    description.focus();
-                    return false;
-                }
+            if (stock.value.trim().length === 0) {
+                alert('재고를 입력하십시오.');
+                stock.focus();
+                return false;
+            }
 
-                if (releaseDate.value.trim().length === 0) {
-                    alert('발행일을 입력하십시오.');
-                    releaseDate.focus();
-                    return false;
+            if (description.value.trim().length === 0) {
+                alert('설명을 입력하십시오.');
+                description.focus();
+                return false;
+            }
+
+            if (releaseDate.value.trim().length === 0) {
+                alert('발행일을 입력하십시오.');
+                releaseDate.focus();
+                return false;
+            }
+
+            const mainImage = document.querySelector('#mainImage');
+            if (mainImage.files.length > 0) {
+                if (confirm('메인 이미지를 추가하시면 기존 메인 이미지가 삭제됩니다.\n진행하시겠습니까?')) {
+                    const maxSize = 50 * 1024 * 1024;
+                    if (mainImage.files[0].size > maxSize) {
+                        alert('이미지 업로드 최대 용량은 50MB를 초과할 수 없습니다.');
+                        return false;
+                    }
+                } else {
+                    return false; // 취소 시 진행 중지 
                 }
-                
-                const mainImage = document.querySelector('#mainImage');
-                if (mainImage.files.length > 0 ) {
-                    if (confirm('메인 이미지를 추가하시면 기존 메인 이미지가 삭제됩니다.\n진행하시겠습니까?')) {
-                        const maxSize = 50 * 1024 * 1024;
-                        if (mainImage.files[0].size > maxSize) {
+            }
+
+            const image = document.querySelector('#image');
+            if (image.files.length > 0) {
+                if (confirm('기타 이미지를 추가하시면 기존 기타 이미지가 삭제됩니다.\n진행하시겠습니까?')) {
+                    const maxSize = 50 * 1024 * 1024;
+                    for (const file of image.files) {
+                        if (file.size > maxSize) {
                             alert('이미지 업로드 최대 용량은 50MB를 초과할 수 없습니다.');
                             return false;
                         }
-                    } else {
-                        return false; // 취소 시 진행 중지 
+                    }
+                } else {
+                    return false; // 취소 시 진행 중지 
+                }
+            }
+
+            return true;
+        }
+
+        const updateBook = () => {
+
+            // 유효성 통과 후 axios 를 이용해서 form data 전송 
+            if (validated()) {
+                const frm = $('#frm');
+                const formData = new FormData(frm[0]);
+
+                const headers = {
+                    headers: {
+                        'Content-type': 'multipart/form-data'
                     }
                 }
 
-                const image = document.querySelector('#image');
-                if (image.files.length > 0 ) {
-                    if (confirm('기타 이미지를 추가하시면 기존 기타 이미지가 삭제됩니다.\n진행하시겠습니까?')) {
-                        const maxSize = 50 * 1024 * 1024;
-                        for (const file of image.files) {
-                            if (file.size > maxSize) {
-                                alert('이미지 업로드 최대 용량은 50MB를 초과할 수 없습니다.');
-                                return false;
-                            }
+                axios.put('/api/v1/book', formData, headers)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('도서가 수정되었습니다.');
+                            location.href = '/book/list';
+                        } else {
+                            alert('도서 수정에 실패했습니다.');
                         }
-                    } else {
-                        return false; // 취소 시 진행 중지 
-                    }
-                }
-                
-                return true;
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
             }
+        }
 
-            const updateBook = ()=>{
-	  
-                // 유효성 통과 후 axios 를 이용해서 form data 전송 
-                if (validated()) {
-                    const frm = $('#frm');   
-                    const formData = new FormData(frm[0]);
+        const goDetail = () => {
+            const bookId = $('#bookId').val();
+            location.href = `/book/${bookId}`;
+        }
+    </script>
+</div>
 
-                    const headers = {
-                        headers: {
-                            'Content-type': 'multipart/form-data'
-                        }
-                    }
-                    
-                    axios.put('/api/v1/book', formData, headers)
-                        .then((resp) => {
-                            if (resp.data.resultCode === 200) {
-                                alert('도서가 수정되었습니다.');
-                                location.href = '/book/list';
-                            } else {
-                                alert('도서 수정에 실패했습니다.');
-                            }
-                        }).catch((err) => {
-                            // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
-                            //alert(err);
-                        });
-                }
-            }
-            
-            const goDetail = ()=>{
-                const bookId = $('#bookId').val();
-                location.href = `/book/${bookId}`;
-            }
-        </script>
-    </div>
 </html>

@@ -66,7 +66,7 @@
             text-decoration: underline;
         }
 
-        .sch-list{
+        .sch-list {
             display: flex;
             align-items: center;
             list-style-type: none;
@@ -74,7 +74,7 @@
             padding: 0;
         }
 
-        .sch-box{
+        .sch-box {
             width: 80%;
             margin-top: 50px;
             margin-bottom: 15px;
@@ -96,8 +96,8 @@
                     <li class="mx-3">
                         <select name="caId" id="caId" class="form-select">
                             <option value="0" selected>전체보기</option>
-                            <option th:value="${item.caId}" th:each="item, itemStat : ${vo}" 
-                                th:text="${item.caName}"></option>
+                            <option th:value="${item.caId}" th:each="item, itemStat : ${vo}" th:text="${item.caName}">
+                            </option>
                         </select>
                     </li>
                     <li>
@@ -169,7 +169,7 @@
 
             const rootDiv = $('<div class="card mb-3"></div>');
             const rowDiv = $('<div class="row g-0"></div>');
-            const imgDiv = $('<div class="col-md-4"></div>');
+            const imgDiv = $('<div class="col-md-3"></div>');
             const imgLink = $('<a href="javascript:void(0)"></a>');
             // 이벤트 처리
             imgLink.on('click', () => {
@@ -177,7 +177,7 @@
             });
 
             const img = $(`<img class="img-fluid rounded-start" src="/static/imgs/thumb/${data.fileThumbName}" alt="${data.title}">`);
-            const mainDiv = $('<div class="col-md-8"></div>');
+            const mainDiv = $('<div class="col-md-9"></div>');
             const bodyDiv = $('<div class="card-body"></div>');
             const titleLink = $('<a href="javascript:void(0)"></a>');
             // 이벤트 처리
@@ -223,7 +223,7 @@
             location.href = `/book/${bookId}`;
         }
 
-        const search = ()=>{
+        const search = () => {
             getData();
         }
 

@@ -19,12 +19,14 @@ public class UserSecureDTO extends User {  // User 클래스는 UserDetails 를 
 
     private String userId;
     private String userName;
+    private int deposit;
 
     public UserSecureDTO(UserEntity entity) {
         super(entity.getUserId(), entity.getPasswd(), makeGrantedAuthorities(entity.getRole()));
 
         this.userId = entity.getUserId();
         this.userName = entity.getUserName();
+        this.deposit = entity.getDeposit();
     }
 
     // 생성자에서 사용해야 하기 때문에 static 으로 처리

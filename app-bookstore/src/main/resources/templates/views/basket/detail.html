@@ -21,8 +21,8 @@
             max-height: 720px;
         }
 
-        .order-btn-box{
-            position: absolute; 
+        .order-btn-box {
+            position: absolute;
             bottom: 0;
             right: 0;
         }
@@ -30,11 +30,11 @@
         .btn-section {
             width: 100%;
             display: flex;
-            justify-content: space-between; 
-            align-items: center; 
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 15px;
         }
-        
+
         .card-body a {
             position: absolute;
             top: 10px;
@@ -60,8 +60,10 @@
                     <div class="btn-section">
                         <h2 th:text="|총합 ${#numbers.formatInteger(totalPrice, 3, 'COMMA')}원|"></h2>
                         <div>
-                            <button type="button" class="btn btn-outline-primary" th:onclick="order([[${userId}]])">주문하기</button>
-                            <button type="button" class="btn btn-outline-secondary" th:onclick="empty([[${userId}]])">비우기</button>
+                            <button type="button" class="btn btn-outline-primary"
+                                th:onclick="order([[${userId}]])">주문하기</button>
+                            <button type="button" class="btn btn-outline-secondary"
+                                th:onclick="empty([[${userId}]])">비우기</button>
                         </div>
                     </div>
                 </section>
@@ -75,8 +77,8 @@
                                 th:alt="${vo.title}"> -->
 
                             <div class="carousel-item carousel-img active">
-                                <img th:src="|/static/imgs/thumb/${basketItem.book.fileThumbName}|" class="d-block w-100"
-                                    th:alt="${basketItem.book.fileName}">
+                                <img th:src="|/static/imgs/thumb/${basketItem.book.fileThumbName}|"
+                                    class="d-block w-100" th:alt="${basketItem.book.fileName}">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -87,25 +89,29 @@
                                 <h2 class="card-title" th:text="${basketItem.book.title}"></h2>
                                 <p class="card-text"><small class="text-body-emphasis"
                                         th:text="|${basketItem.book.title} 저자(글)|"></small></p>
-                                <p class="card-text"><small class="text-body-secondary">[[${basketItem.book.publisher}]] |
+                                <p class="card-text"><small class="text-body-secondary">[[${basketItem.book.publisher}]]
+                                        |
                                         [[${basketItem.book.releaseDate}]]</small></p>
-                                <p class="card-text" th:text="|개당 ${#numbers.formatInteger(basketItem.book.price, 3, 'COMMA')}원|"></p>
+                                <p class="card-text"
+                                    th:text="|개당 ${#numbers.formatInteger(basketItem.book.price, 3, 'COMMA')}원|"></p>
                                 <hr>
                                 <h3 class="card-title" th:text="|${basketItem.quantity}개 저장|"></h3>
-                                <h3 class="card-title" th:text="|총 ${#numbers.formatInteger(basketItem.totalPrice, 3, 'COMMA')}원|"></h3>
+                                <h3 class="card-title"
+                                    th:text="|총 ${#numbers.formatInteger(basketItem.totalPrice, 3, 'COMMA')}원|"></h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="d-flex justify-content-end">
-                <button type="button" onclick="goList();" class="btn btn-secondary">목록</button>
+                <button type="button" onclick="goList();" class="btn btn-secondary"
+                    style="margin-bottom: 15px;">목록</button>
             </section>
         </section>
     </main>
     <script>
 
-        const order = (userId)=>{
+        const order = (userId) => {
             if (confirm('장바구니에 있는 도서들을 전부 주문하시겠습니까?')) {
                 axios.post(`/api/v1/basket/order/${userId}`)
                     .then((resp) => {
@@ -122,7 +128,7 @@
             }
         }
 
-        const del = (basketId)=>{
+        const del = (basketId) => {
             if (confirm('해당 도서를 장바구니에서 삭제하시겠습니까?')) {
                 const userId = $('#userId').val();
                 axios.delete(`/api/v1/basket/${basketId}`)
@@ -140,7 +146,7 @@
             }
         }
 
-        const empty = (userId)=>{
+        const empty = (userId) => {
             if (confirm('장바구니를 전부 비우시겠습니까?')) {
                 axios.delete(`/api/v1/basket/empty/${userId}`)
                     .then((resp) => {
@@ -157,7 +163,7 @@
             }
         }
 
-        const updateStatus = (orderId, newStatus, alertMessage)=>{
+        const updateStatus = (orderId, newStatus, alertMessage) => {
             const dataParam = {
                 orderId: orderId,
                 newStatus: newStatus
@@ -182,7 +188,7 @@
                 });
         }
 
-        const goList = ()=>{
+        const goList = () => {
             location.href = '/book/list';
         }
 

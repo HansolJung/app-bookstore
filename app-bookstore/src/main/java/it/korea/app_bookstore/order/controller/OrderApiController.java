@@ -62,7 +62,12 @@ public class OrderApiController {
     public ResponseEntity<Map<String, Object>> getOrderList(@PageableDefault(page = 0, size = 10, 
             sort = "orderDate", direction = Direction.DESC) Pageable pageable,
             OrderSearchDTO searchDTO,
-            @PathVariable(name = "userId") String userId) throws Exception {
+            @PathVariable(name = "userId") String userId,
+            @AuthenticationPrincipal UserSecureDTO user) throws Exception {
+
+        if (!userId.equals(user.getUserId())) {   // 로그인 된 유저의 아이디와 PathVariable 로 넘어온 아이디가 일치하지 않을 경우...
+            throw new RuntimeException("다른 사용자의 주문 내역 리스트는 볼 수 없습니다.");
+        }
         
         Map<String, Object> resultMap = orderService.getOrderList(pageable, searchDTO);
 

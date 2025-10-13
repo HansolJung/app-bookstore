@@ -50,7 +50,13 @@ public class BasketApiController {
      * @return
      */
     @PostMapping("/basket/order/{userId}")
-    public ResponseEntity<Map<String, Object>> orderAllBooks(@PathVariable(name = "userId") String userId) throws Exception {
+    public ResponseEntity<Map<String, Object>> orderAllBooks(@PathVariable(name = "userId") String userId,
+            @AuthenticationPrincipal UserSecureDTO user) throws Exception {
+
+        if (!userId.equals(user.getUserId())) {   // 로그인 된 유저의 아이디와 PathVariable 로 넘어온 아이디가 일치하지 않을 경우...
+            throw new RuntimeException("다른 사용자의 장바구니는 주문할 수 없습니다.");
+        }
+
         Map<String, Object> resultMap = new HashMap<>();
         HttpStatus status = HttpStatus.OK;
 

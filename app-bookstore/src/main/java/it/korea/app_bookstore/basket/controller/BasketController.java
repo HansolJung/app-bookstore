@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import it.korea.app_bookstore.basket.dto.BasketDTO;
 import it.korea.app_bookstore.basket.service.BasketService;
+import it.korea.app_bookstore.user.dto.UserSecureDTO;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -27,16 +29,17 @@ public class BasketController {
      * @return
      */
     @GetMapping("/detail/{userId}")
-    public ModelAndView getBasketView(@PathVariable(name = "userId") String userId) {
+    public ModelAndView getBasketView(@PathVariable(name = "userId") String userId,
+            @AuthenticationPrincipal UserSecureDTO user) throws Exception {
+
+        if (!userId.equals(user.getUserId())) {   // 로그인 된 유저의 아이디와 PathVariable 로 넘어온 아이디가 일치하지 않을 경우...
+            throw new RuntimeException("다른 사용자의 장바구니는 볼 수 없습니다.");
+        }
 
         ModelAndView view = new ModelAndView();
         List<BasketDTO.Detail> dtoList = null;
 
-        try {
-            dtoList = basketService.getBasketList(userId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        dtoList = basketService.getBasketList(userId);
 
         int totalPrice = 0;
 
