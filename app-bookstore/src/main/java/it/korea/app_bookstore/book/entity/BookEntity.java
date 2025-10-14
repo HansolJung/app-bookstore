@@ -40,7 +40,7 @@ public class BookEntity extends BaseEntity {
     private String delYn;
 
     // 카테고리 매핑
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ca_id")
     private CategoryEntity category;
 

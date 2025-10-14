@@ -32,7 +32,7 @@ public class OrderEntity {
     private String status;
 
     // 구매한 사용자 매핑
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
  

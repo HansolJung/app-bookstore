@@ -36,7 +36,7 @@ public class BookFileEntity {
     private LocalDateTime createDate;
 
     // 도서 매핑
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
     private BookEntity book;
 }
