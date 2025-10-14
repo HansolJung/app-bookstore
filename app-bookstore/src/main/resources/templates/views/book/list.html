@@ -176,7 +176,7 @@
                 goDetail(data.bookId);
             });
 
-            const img = $(`<img class="img-fluid rounded-start" src="/static/imgs/thumb/${data.fileThumbName}" alt="${data.title}">`);
+            const img = $(`<img class="img-fluid rounded-start" src="/static/imgs/thumb/${data.fileThumbName}" alt="${data.title}" onerror="this.src='/img/default.png'; this.onerror=null;">`);
             const mainDiv = $('<div class="col-md-9"></div>');
             const bodyDiv = $('<div class="card-body"></div>');
             const titleLink = $('<a href="javascript:void(0)"></a>');

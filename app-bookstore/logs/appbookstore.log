@@ -866,3 +866,3052 @@
         be1_0.del_yn='N'
 [2025-10-14 10:28:00:59362][http-nio-9090-exec-5] INFO  p6spy - 
 [2025-10-14 10:28:00:59373][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 10:38:05:629][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+[2025-10-14 10:38:05:672][restartedMain] INFO  i.k.a.AppBookStoreApplication - Starting AppBookStoreApplication using Java 21.0.7 with PID 9724 (C:\JHS\boot-workspace\app-boot\app-bookstore\bin\main started by ITSC in C:\JHS\boot-workspace\app-boot\app-bookstore)
+[2025-10-14 10:38:05:673][restartedMain] INFO  i.k.a.AppBookStoreApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-10-14 10:38:05:851][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2025-10-14 10:38:05:851][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2025-10-14 10:38:05:1446][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-10-14 10:38:06:1513][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 7 JPA repository interfaces.
+[2025-10-14 10:38:06:1613][restartedMain] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=webConfig; factoryMethodName=characterEncodingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [it/korea/app_bookstore/common/config/WebConfig.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]]
+[2025-10-14 10:38:06:2242][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[2025-10-14 10:38:06:2262][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[2025-10-14 10:38:06:2264][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2025-10-14 10:38:06:2264][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+[2025-10-14 10:38:06:2336][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-10-14 10:38:06:2336][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1484 ms
+[2025-10-14 10:38:07:2638][restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-10-14 10:38:07:2675][restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+[2025-10-14 10:38:07:2700][restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-10-14 10:38:07:2889][restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-10-14 10:38:07:2910][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-10-14 10:38:07:2977][restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@57097976
+[2025-10-14 10:38:07:2979][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-10-14 10:38:07:3000][restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-10-14 10:38:07:3018][restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'p6SpyDataSourceDecorator [com.p6spy.engine.spy.P6DataSource] -> dataSource [com.zaxxer.hikari.HikariDataSource]']
+	Database driver: undefined/unknown
+	Database version: 11.8.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-10-14 10:38:07:3024][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@693481f0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@26390260)
+[2025-10-14 10:38:07:3024][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@30989034) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7ca9a2f5)
+[2025-10-14 10:38:07:3024][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@31df9791) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5f1bb9c8)
+[2025-10-14 10:38:07:3024][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2b768b2f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1af92abe)
+[2025-10-14 10:38:07:3025][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5757456f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@558063b4)
+[2025-10-14 10:38:07:3025][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4ab0b5d8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@194fcaea)
+[2025-10-14 10:38:07:3025][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@74de8891) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2215c87d)
+[2025-10-14 10:38:07:3025][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6dc4b792) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@abb385a)
+[2025-10-14 10:38:07:3025][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@a21a39c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@67bd485)
+[2025-10-14 10:38:08:3721][restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-10-14 10:38:08:3747][restartedMain] INFO  p6spy - 2025-10-14 10:38:08 | OperationTime : 2ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        table_name 
+    from
+        information_schema.TABLES 
+    where
+        table_schema=database() 
+        and table_type='SEQUENCE'
+[2025-10-14 10:38:08:3758][restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-10-14 10:38:08:3940][restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2025-10-14 10:38:09:4693][restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authProvider
+[2025-10-14 10:38:09:4694][restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[2025-10-14 10:38:09:4811][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/imgs/**'], Ant [pattern='/static/imgs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 10:38:09:4811][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/img/**'], Ant [pattern='/static/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 10:38:09:4811][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@79c02826. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 10:38:09:5072][restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[2025-10-14 10:38:09:5113][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2025-10-14 10:38:09:5127][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[2025-10-14 10:38:09:5142][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[2025-10-14 10:38:09:5150][restartedMain] INFO  i.k.a.AppBookStoreApplication - Started AppBookStoreApplication in 4.803 seconds (process running for 5.312)
+[2025-10-14 10:38:14:9656][http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-10-14 10:38:14:9656][http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-10-14 10:38:14:9657][http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+[2025-10-14 10:38:14:9737][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 10:38:14:9738][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 10:38:14 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 10:38:14:9762][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 10:38:15:10557][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 10:38:15:10566][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 10:38:15:10682][http-nio-9090-exec-6] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 10:38:15:10717][http-nio-9090-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 10:38:15:10722][http-nio-9090-exec-6] INFO  p6spy - 2025-10-14 10:38:15 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 10:38:15:10771][http-nio-9090-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 10:38:15:10775][http-nio-9090-exec-6] INFO  p6spy - 2025-10-14 10:38:15 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 10:38:15:10784][http-nio-9090-exec-6] INFO  p6spy - 
+[2025-10-14 10:38:15:10847][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 10:38:18:13606][http-nio-9090-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 10:38:18:13610][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        (
+            be1_0.title like replace(?, '\\', '\\\\') 
+            or be1_0.author like replace(?, '\\', '\\\\')
+        ) 
+        and be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 10:38:18:13614][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 10:38:18 | OperationTime : 3ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        (
+            be1_0.title like replace('%갑룡%', '\\', '\\\\') 
+            or be1_0.author like replace('%갑룡%', '\\', '\\\\')
+        ) 
+        and be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 10:38:18:13616][http-nio-9090-exec-9] INFO  p6spy - 
+[2025-10-14 10:38:18:13626][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 10:38:29:25228][http-nio-9090-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 10:38:29:25230][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 10:38:29:25232][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 10:38:29 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 10:38:29:25238][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 10:38:29:25238][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 10:38:29 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 10:38:29:25239][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 10:38:29:25252][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:04:47:1603029][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:04:47:1603030][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:04:47 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:04:47:1603032][http-nio-9090-exec-2] INFO  p6spy - 
+[2025-10-14 11:04:47:1603102][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:04:47:1603162][http-nio-9090-exec-8] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:04:47:1603164][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:04:47:1603165][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:04:47:1603165][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:04:47 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:04:47:1603172][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:04:47:1603174][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:04:47 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:04:47:1603174][http-nio-9090-exec-8] INFO  p6spy - 
+[2025-10-14 11:04:47:1603189][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:06:03:1678989][http-nio-9090-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:06:03:1678990][http-nio-9090-exec-10] INFO  p6spy - 2025-10-14 11:06:03 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:06:03:1678991][http-nio-9090-exec-10] INFO  p6spy - 
+[2025-10-14 11:06:03:1679040][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:06:03:1679149][http-nio-9090-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:06:03:1679151][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:06:03:1679153][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 11:06:03 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:06:03:1679153][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:06:03:1679163][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:06:03:1679163][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 11:06:03 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:06:03:1679164][http-nio-9090-exec-9] INFO  p6spy - 
+[2025-10-14 11:06:03:1679182][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:06:15:628][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+[2025-10-14 11:06:15:672][restartedMain] INFO  i.k.a.AppBookStoreApplication - Starting AppBookStoreApplication using Java 21.0.7 with PID 11728 (C:\JHS\boot-workspace\app-boot\app-bookstore\bin\main started by ITSC in C:\JHS\boot-workspace\app-boot\app-bookstore)
+[2025-10-14 11:06:15:673][restartedMain] INFO  i.k.a.AppBookStoreApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-10-14 11:06:15:848][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2025-10-14 11:06:15:848][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2025-10-14 11:06:16:1464][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-10-14 11:06:16:1539][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 7 JPA repository interfaces.
+[2025-10-14 11:06:16:1659][restartedMain] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=webConfig; factoryMethodName=characterEncodingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [it/korea/app_bookstore/common/config/WebConfig.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]]
+[2025-10-14 11:06:17:2317][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[2025-10-14 11:06:17:2336][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[2025-10-14 11:06:17:2339][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2025-10-14 11:06:17:2339][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+[2025-10-14 11:06:17:2408][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-10-14 11:06:17:2409][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1560 ms
+[2025-10-14 11:06:17:2708][restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-10-14 11:06:17:2746][restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+[2025-10-14 11:06:17:2769][restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-10-14 11:06:18:2962][restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-10-14 11:06:18:2982][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-10-14 11:06:18:3052][restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2d956357
+[2025-10-14 11:06:18:3053][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-10-14 11:06:18:3076][restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-10-14 11:06:18:3090][restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'p6SpyDataSourceDecorator [com.p6spy.engine.spy.P6DataSource] -> dataSource [com.zaxxer.hikari.HikariDataSource]']
+	Database driver: undefined/unknown
+	Database version: 11.8.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5f1bb9c8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2b768b2f)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1af92abe) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5757456f)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@558063b4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4ab0b5d8)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@194fcaea) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@74de8891)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2215c87d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6dc4b792)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@abb385a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@a21a39c)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@67bd485) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4e4b8bff)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1de11384) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1adb7ee7)
+[2025-10-14 11:06:18:3097][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@42dc4ec5) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@50da2112)
+[2025-10-14 11:06:18:3782][restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-10-14 11:06:18:3808][restartedMain] INFO  p6spy - 2025-10-14 11:06:18 | OperationTime : 7ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        table_name 
+    from
+        information_schema.TABLES 
+    where
+        table_schema=database() 
+        and table_type='SEQUENCE'
+[2025-10-14 11:06:18:3819][restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-10-14 11:06:19:3996][restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2025-10-14 11:06:19:4775][restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authProvider
+[2025-10-14 11:06:19:4775][restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[2025-10-14 11:06:19:4913][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/imgs/**'], Ant [pattern='/static/imgs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 11:06:19:4914][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/img/**'], Ant [pattern='/static/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 11:06:19:4914][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@5db652cc. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 11:06:20:5159][restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[2025-10-14 11:06:20:5199][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2025-10-14 11:06:20:5213][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[2025-10-14 11:06:20:5228][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[2025-10-14 11:06:20:5236][restartedMain] INFO  i.k.a.AppBookStoreApplication - Started AppBookStoreApplication in 4.902 seconds (process running for 5.394)
+[2025-10-14 11:06:22:7486][http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-10-14 11:06:22:7486][http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-10-14 11:06:22:7486][http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2025-10-14 11:06:22:7570][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:06:22:7572][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:06:22 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:06:22:7590][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:06:23:8347][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:06:23:8349][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:06:23:8387][http-nio-9090-exec-7] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:06:23:8414][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:06:23:8419][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:06:23 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:06:23:8446][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:06:23:8447][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:06:23 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:06:23:8450][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:06:23:8482][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:07:27:72323][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:07:27:72325][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:07:27 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:07:27:72326][http-nio-9090-exec-4] INFO  p6spy - 
+[2025-10-14 11:07:27:72382][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:07:27:72449][http-nio-9090-exec-2] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:07:27:72450][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:07:27:72450][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:07:27:72452][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:07:27 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:07:27:72459][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:07:27:72460][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:07:27 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:07:27:72461][http-nio-9090-exec-2] INFO  p6spy - 
+[2025-10-14 11:07:27:72477][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:08:34:139231][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:08:34:139232][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:08:34 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:08:34:139233][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:08:34:139284][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:08:34:139386][http-nio-9090-exec-8] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:08:34:139388][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:08:34:139390][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:08:34 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:08:34:139391][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:08:34:139398][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:08:34:139399][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:08:34 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:08:34:139399][http-nio-9090-exec-8] INFO  p6spy - 
+[2025-10-14 11:08:34:139413][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:08:34:139420][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource static/img/default.png.]
+[2025-10-14 11:08:36:141142][http-nio-9090-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:08:36:141142][http-nio-9090-exec-10] INFO  p6spy - 2025-10-14 11:08:36 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:08:36:141143][http-nio-9090-exec-10] INFO  p6spy - 
+[2025-10-14 11:08:36:141182][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:08:36:141288][http-nio-9090-exec-2] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:08:36:141290][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:08:36:141292][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:08:36 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:08:36:141293][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:08:36:141303][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:08:36:141306][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:08:36 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:08:36:141308][http-nio-9090-exec-2] INFO  p6spy - 
+[2025-10-14 11:08:36:141326][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:08:36:141335][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource static/img/default.png.]
+[2025-10-14 11:09:23:188042][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:09:23:188043][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:09:23 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:09:23:188044][http-nio-9090-exec-8] INFO  p6spy - 
+[2025-10-14 11:09:23:188084][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:09:23:188199][http-nio-9090-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:09:23:188201][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:09:23:188201][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:09:23:188203][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:09:23 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:09:23:188209][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:09:23:188210][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:09:23 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:09:23:188211][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:09:23:188226][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:09:23:188241][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'bookId': Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: "staticimgdefault.png"]
+[2025-10-14 11:11:09:294097][http-nio-9090-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:11:09:294098][http-nio-9090-exec-10] INFO  p6spy - 2025-10-14 11:11:09 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:11:09:294098][http-nio-9090-exec-10] INFO  p6spy - 
+[2025-10-14 11:11:09:294141][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:11:09:294202][http-nio-9090-exec-2] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:11:09:294205][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:11:09:294207][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:11:09 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:11:09:294210][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:11:09:294214][http-nio-9090-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:11:09:294217][http-nio-9090-exec-2] INFO  p6spy - 2025-10-14 11:11:09 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:11:09:294219][http-nio-9090-exec-2] INFO  p6spy - 
+[2025-10-14 11:11:09:294241][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:11:11:296463][http-nio-9090-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:11:11:296464][http-nio-9090-exec-3] INFO  p6spy - 2025-10-14 11:11:11 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:11:11:296465][http-nio-9090-exec-3] INFO  p6spy - 
+[2025-10-14 11:11:11:296493][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:11:11:296572][http-nio-9090-exec-5] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:11:11:296573][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:11:11:296576][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:11:11 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:11:11:296580][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:11:11:296581][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:11:11:296583][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:11:11 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:11:11:296584][http-nio-9090-exec-5] INFO  p6spy - 
+[2025-10-14 11:11:11:296594][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:12:09:354062][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:12:09:354128][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:12:34:379826][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:12:34:379886][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:12:43:388206][http-nio-9090-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        ue1_0.user_id,
+        ue1_0.addr,
+        ue1_0.addr_detail,
+        ue1_0.birth,
+        ue1_0.create_date,
+        ue1_0.del_yn,
+        ue1_0.deposit,
+        ue1_0.email,
+        ue1_0.gender,
+        ue1_0.passwd,
+        ue1_0.phone,
+        ue1_0.user_role,
+        ue1_0.update_date,
+        ue1_0.use_yn,
+        ue1_0.user_name 
+    from
+        kb_users ue1_0 
+    where
+        ue1_0.user_id=?
+[2025-10-14 11:12:43:388210][http-nio-9090-exec-10] INFO  p6spy - 2025-10-14 11:12:43 | OperationTime : 2ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ue1_0.user_id,
+        ue1_0.addr,
+        ue1_0.addr_detail,
+        ue1_0.birth,
+        ue1_0.create_date,
+        ue1_0.del_yn,
+        ue1_0.deposit,
+        ue1_0.email,
+        ue1_0.gender,
+        ue1_0.passwd,
+        ue1_0.phone,
+        ue1_0.user_role,
+        ue1_0.update_date,
+        ue1_0.use_yn,
+        ue1_0.user_name 
+    from
+        kb_users ue1_0 
+    where
+        ue1_0.user_id='admin'
+[2025-10-14 11:12:43:388212][http-nio-9090-exec-10] INFO  p6spy - 
+[2025-10-14 11:12:43:388274][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource imgs/image.jpg.]
+[2025-10-14 11:12:43:388292][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:12:43:388313][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:12:46:391602][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource imgs/image.jpg.]
+[2025-10-14 11:12:46:391616][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:12:46:391625][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:12:51:396104][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:12:51:396121][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:13:24:429851][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:13:24:429864][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:13:37:442152][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:13:37:442162][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:13:37:442163][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 11:13:37 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:13:37:442164][http-nio-9090-exec-9] INFO  p6spy - 
+[2025-10-14 11:13:37:442205][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:13:37:442279][http-nio-9090-exec-10] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:13:37:442281][http-nio-9090-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:13:37:442283][http-nio-9090-exec-10] INFO  p6spy - 2025-10-14 11:13:37 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:13:37:442283][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:13:37:442290][http-nio-9090-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:13:37:442291][http-nio-9090-exec-10] INFO  p6spy - 2025-10-14 11:13:37 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:13:37:442292][http-nio-9090-exec-10] INFO  p6spy - 
+[2025-10-14 11:13:37:442304][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:14:37:502574][File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-10-14 11:14:37:502576][Thread-11] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[2025-10-14 11:14:37:502576][tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9090"]
+[2025-10-14 11:14:37:502579][tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+[2025-10-14 11:14:37:502580][Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9090"]
+[2025-10-14 11:14:37:502583][Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-10-14 11:14:37:502585][Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2025-10-14 11:14:37:502589][Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2025-10-14 11:14:37:502707][restartedMain] INFO  i.k.a.AppBookStoreApplication - Starting AppBookStoreApplication using Java 21.0.7 with PID 11728 (C:\JHS\boot-workspace\app-boot\app-bookstore\bin\main started by ITSC in C:\JHS\boot-workspace\app-boot\app-bookstore)
+[2025-10-14 11:14:37:502707][restartedMain] INFO  i.k.a.AppBookStoreApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-10-14 11:14:37:502907][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-10-14 11:14:37:502935][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 7 JPA repository interfaces.
+[2025-10-14 11:14:38:502964][restartedMain] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=webConfig; factoryMethodName=characterEncodingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [it/korea/app_bookstore/common/config/WebConfig.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]]
+[2025-10-14 11:14:38:503032][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+[2025-10-14 11:14:38:503032][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[2025-10-14 11:14:38:503032][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2025-10-14 11:14:38:503032][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+[2025-10-14 11:14:38:503057][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-10-14 11:14:38:503057][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 348 ms
+[2025-10-14 11:14:38:503098][restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-10-14 11:14:38:503101][restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-10-14 11:14:38:503108][restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-10-14 11:14:38:503109][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[2025-10-14 11:14:38:503112][restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.mariadb.jdbc.Connection@643b8844
+[2025-10-14 11:14:38:503112][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[2025-10-14 11:14:38:503113][restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-10-14 11:14:38:503113][restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'p6SpyDataSourceDecorator [com.p6spy.engine.spy.P6DataSource] -> dataSource [com.zaxxer.hikari.HikariDataSource]']
+	Database driver: undefined/unknown
+	Database version: 11.8.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-10-14 11:14:38:503113][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@24aa7b26) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@298b764f)
+[2025-10-14 11:14:38:503113][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2bd90e8b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1f86dad9)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6802e144) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1a49cb05)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@79072391) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@507e6e7a)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2f89adf0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7b4c4ae7)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3b17f5b4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@18b94112)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7abd99d8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@63bfff1a)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@67811c8c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@356260bf)
+[2025-10-14 11:14:38:503114][restartedMain] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@23875c92) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@3f5c30d7)
+[2025-10-14 11:14:38:503227][restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-10-14 11:14:38:503229][restartedMain] INFO  p6spy - 2025-10-14 11:14:38 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        table_name 
+    from
+        information_schema.TABLES 
+    where
+        table_schema=database() 
+        and table_type='SEQUENCE'
+[2025-10-14 11:14:38:503235][restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-10-14 11:14:38:503391][restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authProvider
+[2025-10-14 11:14:38:503391][restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[2025-10-14 11:14:38:503409][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/imgs/**'], Ant [pattern='/static/imgs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 11:14:38:503409][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/img/**'], Ant [pattern='/static/img/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 11:14:38:503409][restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@45feb4a7. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2025-10-14 11:14:38:503446][restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[2025-10-14 11:14:38:503451][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2025-10-14 11:14:38:503457][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[2025-10-14 11:14:38:503459][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[2025-10-14 11:14:38:503461][restartedMain] INFO  i.k.a.AppBookStoreApplication - Started AppBookStoreApplication in 0.801 seconds (process running for 503.619)
+[2025-10-14 11:14:38:503463][restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[2025-10-14 11:14:43:508232][http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-10-14 11:14:43:508232][http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-10-14 11:14:43:508232][http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[2025-10-14 11:14:43:508237][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:14:43:508239][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:14:43 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:14:43:508243][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:14:43:508292][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:14:43:508356][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:14:43:508358][http-nio-9090-exec-7] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:14:43:508360][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:14:43:508363][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:14:43 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:14:43:508368][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:14:43:508369][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:14:43 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:14:43:508374][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:14:43:508395][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:14:46:511692][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:14:46:511692][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:14:46 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:14:46:511692][http-nio-9090-exec-4] INFO  p6spy - 
+[2025-10-14 11:14:46:511725][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:14:46:511803][http-nio-9090-exec-8] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:14:46:511806][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:14:46:511807][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:14:46:511808][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:14:46 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:14:46:511812][http-nio-9090-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:14:46:511813][http-nio-9090-exec-8] INFO  p6spy - 2025-10-14 11:14:46 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:14:46:511813][http-nio-9090-exec-8] INFO  p6spy - 
+[2025-10-14 11:14:46:511828][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:14:49:514381][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:14:49:514382][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:14:49 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:14:49:514383][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:14:49:514424][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:14:49:514484][http-nio-9090-exec-5] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:14:49:514485][http-nio-9090-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:14:49:514485][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:14:49:514487][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:14:49 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:14:49:514490][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:14:49:514491][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:14:49 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:14:49:514492][http-nio-9090-exec-5] INFO  p6spy - 
+[2025-10-14 11:14:49:514509][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:15:02:527571][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=?
+[2025-10-14 11:15:02:527573][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:15:02 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=12
+[2025-10-14 11:15:02:527577][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=?
+[2025-10-14 11:15:02:527578][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:15:02 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=10
+[2025-10-14 11:15:02:527579][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:15:02:527621][http-nio-9090-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:15:02:527683][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:15:29:554628][http-nio-9090-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:15:29:554629][http-nio-9090-exec-6] INFO  p6spy - 2025-10-14 11:15:29 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:15:29:554631][http-nio-9090-exec-6] INFO  p6spy - 
+[2025-10-14 11:15:29:554665][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:15:29:554737][http-nio-9090-exec-4] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:15:29:554739][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:15:29:554740][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:15:29:554743][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:15:29 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:15:29:554746][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:15:29:554747][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:15:29 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:15:29:554748][http-nio-9090-exec-4] INFO  p6spy - 
+[2025-10-14 11:15:29:554759][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:17:25:670116][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:17:25:670117][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:17:25 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:17:25:670117][http-nio-9090-exec-5] INFO  p6spy - 
+[2025-10-14 11:17:25:670149][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:17:25:670268][http-nio-9090-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:17:25:670269][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:17:25:670269][http-nio-9090-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:17:25:670272][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:17:25 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:17:25:670276][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:17:25:670277][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:17:25 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:17:25:670277][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:17:25:670290][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:17:27:672313][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=?
+[2025-10-14 11:17:27:672315][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:17:27 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=12
+[2025-10-14 11:17:27:672316][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=?
+[2025-10-14 11:17:27:672317][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:17:27 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=10
+[2025-10-14 11:17:27:672317][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:17:27:672344][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:17:27:672418][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:12:717073][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:12:717073][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:18:12 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:12:717074][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:18:12:717108][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:18:12:717185][http-nio-9090-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:18:12:717187][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:12:717189][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:18:12 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:12:717190][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:12:717192][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:18:12:717193][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:18:12 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:18:12:717194][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:18:12:717205][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:18:17:722091][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=?
+[2025-10-14 11:18:17:722092][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:18:17 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=16
+[2025-10-14 11:18:17:722093][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=?
+[2025-10-14 11:18:17:722094][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:18:17 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=8
+[2025-10-14 11:18:17:722095][http-nio-9090-exec-4] INFO  p6spy - 
+[2025-10-14 11:18:17:722122][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:18:17:722191][http-nio-9090-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:28:733708][http-nio-9090-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:28:733709][http-nio-9090-exec-6] INFO  p6spy - 2025-10-14 11:18:28 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:28:733710][http-nio-9090-exec-6] INFO  p6spy - 
+[2025-10-14 11:18:28:733743][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:18:28:733813][http-nio-9090-exec-5] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:18:28:733815][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:28:733816][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:28:733816][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:18:28 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:28:733820][http-nio-9090-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:18:28:733823][http-nio-9090-exec-5] INFO  p6spy - 2025-10-14 11:18:28 | OperationTime : 1ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:18:28:733824][http-nio-9090-exec-5] INFO  p6spy - 
+[2025-10-14 11:18:28:733835][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:18:32:737057][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=?
+[2025-10-14 11:18:32:737058][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:18:32 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        be1_0.ca_id,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.book_id=12
+[2025-10-14 11:18:32:737059][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=?
+[2025-10-14 11:18:32:737060][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:18:32 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0 
+    where
+        ce1_0.ca_id=10
+[2025-10-14 11:18:32:737060][http-nio-9090-exec-4] INFO  p6spy - 
+[2025-10-14 11:18:32:737093][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:18:32:737154][http-nio-9090-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:33:738480][http-nio-9090-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:33:738481][http-nio-9090-exec-7] INFO  p6spy - 2025-10-14 11:18:33 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:33:738482][http-nio-9090-exec-7] INFO  p6spy - 
+[2025-10-14 11:18:33:738511][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:18:33:738586][http-nio-9090-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:18:33:738588][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:33:738589][http-nio-9090-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:33:738590][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 11:18:33 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:33:738596][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:18:33:738598][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 11:18:33 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:18:33:738600][http-nio-9090-exec-9] INFO  p6spy - 
+[2025-10-14 11:18:33:738619][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:18:36:741113][http-nio-9090-exec-4] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:18:36:741114][http-nio-9090-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:36:741115][http-nio-9090-exec-4] INFO  p6spy - 2025-10-14 11:18:36 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:36:741117][http-nio-9090-exec-4] INFO  p6spy - 
+[2025-10-14 11:18:36:741125][http-nio-9090-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]
+[2025-10-14 11:18:38:743025][http-nio-9090-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:38:743026][http-nio-9090-exec-9] INFO  p6spy - 2025-10-14 11:18:38 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        ce1_0.ca_id,
+        ce1_0.ca_name 
+    from
+        kb_categories ce1_0
+[2025-10-14 11:18:38:743026][http-nio-9090-exec-9] INFO  p6spy - 
+[2025-10-14 11:18:38:743053][http-nio-9090-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.]
+[2025-10-14 11:18:38:743112][http-nio-9090-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2025-10-14 11:18:38:743114][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn=? 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:38:743116][http-nio-9090-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-10-14 11:18:38:743117][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:18:38 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        be1_0.book_id,
+        be1_0.author,
+        c1_0.ca_id,
+        c1_0.ca_name,
+        be1_0.create_date,
+        be1_0.del_yn,
+        be1_0.description,
+        fl1_0.book_id,
+        fl1_0.bf_id,
+        fl1_0.create_date,
+        fl1_0.file_name,
+        fl1_0.file_path,
+        fl1_0.file_size,
+        fl1_0.file_thumb_name,
+        fl1_0.main_yn,
+        fl1_0.stored_name,
+        be1_0.price,
+        be1_0.publisher,
+        be1_0.release_date,
+        be1_0.stock,
+        be1_0.title,
+        be1_0.update_date 
+    from
+        kb_books be1_0 
+    left join
+        kb_categories c1_0 
+            on c1_0.ca_id=be1_0.ca_id 
+    left join
+        kb_book_files fl1_0 
+            on be1_0.book_id=fl1_0.book_id 
+    where
+        be1_0.del_yn='N' 
+    order by
+        be1_0.book_id desc
+[2025-10-14 11:18:38:743123][http-nio-9090-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn=?
+[2025-10-14 11:18:38:743125][http-nio-9090-exec-1] INFO  p6spy - 2025-10-14 11:18:38 | OperationTime : 0ms | 
+(P6Spy sql,Hibernate format):
+
+    select
+        count(be1_0.book_id) 
+    from
+        kb_books be1_0 
+    where
+        be1_0.del_yn='N'
+[2025-10-14 11:18:38:743126][http-nio-9090-exec-1] INFO  p6spy - 
+[2025-10-14 11:18:38:743142][http-nio-9090-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource thumb/null.]

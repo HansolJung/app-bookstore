@@ -78,7 +78,8 @@
 
                             <div class="carousel-item carousel-img active">
                                 <img th:src="|/static/imgs/thumb/${basketItem.book.fileThumbName}|"
-                                    class="d-block w-100" th:alt="${basketItem.book.fileName}">
+                                    class="d-block w-100" th:alt="${basketItem.book.fileName}"
+                                    onerror="this.src='/img/default.png'; this.onerror=null;">
                             </div>
                         </div>
                         <div class="col-md-8">

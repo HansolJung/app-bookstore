@@ -74,6 +74,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers("/.well-known/**").permitAll()   // chrome dev-tool 에러 처리
                 .requestMatchers("/favicon.ico").permitAll()  // favicon 에러 처리
+                .requestMatchers("/img/**").permitAll()  // 대체 이미지 경로는 인증 처리하지 않음
                 .requestMatchers(HttpMethod.GET, "/book/**", "/api/v1/book/**").permitAll()   // GET 방식인 /book 은 모두 허용
                 .requestMatchers(HttpMethod.GET, "/book/create").hasAnyRole("ADMIN")   // ADMIN 권한을 가지고 있어야만 허용
                 .requestMatchers("/admin/**", "/api/v1/admin/**").hasAnyRole("ADMIN")   // ADMIN 권한을 가지고 있어야만 허용

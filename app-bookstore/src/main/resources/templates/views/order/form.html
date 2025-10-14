@@ -4,11 +4,12 @@
 
 <th:block layout:fragment="css">
     <style>
-        .table th, .table td{
+        .table th,
+        .table td {
             vertical-align: middle;
         }
 
-        .table label{
+        .table label {
             margin-top: 4px;
         }
 
@@ -17,180 +18,185 @@
         }
     </style>
 </th:block>
-    <div layout:fragment="content">
-        <main class="container d-flex justify-content-center vh-100">
-            <section class="w-75 h-75">
-                <header class="text-center mt-5">
-                    <h2>도서 구매하기</h2>
-                </header>
-                <section class="mt-5">
-                    <div class="card mb-3" style="max-width: 100%;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <!-- <img class="img-fluid rounded-start" th:src="/static/imgs/${vo.storedName}"
+<div layout:fragment="content">
+    <main class="container d-flex justify-content-center vh-100">
+        <section class="w-75 h-75">
+            <header class="text-center mt-5">
+                <h2>도서 구매하기</h2>
+            </header>
+            <section class="mt-5">
+                <div class="card mb-3" style="max-width: 100%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <!-- <img class="img-fluid rounded-start" th:src="/static/imgs/${vo.storedName}"
                                     th:alt="${vo.title}"> -->
-                                <div class="carousel-item carousel-img" th:each="item : ${vo.fileList}"
-                                    th:classappend="${item.mainYn} == 'Y' ? 'active' : ''">
-                                    <img th:src="|/static/imgs/${item.storedName}|" class="d-block w-100"
-                                        th:alt="${item.fileName}">
-                                </div>
+                            <div class="carousel-item carousel-img" th:each="item : ${vo.fileList}"
+                                th:classappend="${item.mainYn} == 'Y' ? 'active' : ''">
+                                <img th:src="|/static/imgs/${item.storedName}|" class="d-block w-100"
+                                    th:alt="${item.fileName}" onerror="this.src='/img/default.png'; this.onerror=null;">
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <input type="hidden" name="stock" id="stock" th:value="${vo.stock}">
-                                    <form id="frm">
-                                        <table class="table">
-                                            <tr>
-                                                <th>
-                                                    <label class="form-label">도서명</label>
-                                                </th>
-                                                <td>
-                                                    <span th:text="${vo.title}" id="title"></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="form-label">저자</label>
-                                                </th>
-                                                <td>
-                                                    <span th:text="${vo.author}" id="author"></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="form-label">가격</label>
-                                                </th>
-                                                <td>
-                                                    <span th:text="|${#numbers.formatInteger(vo.price, 3, 'COMMA')}원|" id="price"></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label class="form-label">재고</label>
-                                                </th>
-                                                <td>
-                                                    <span th:text="${vo.stock}" id="stock"></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <label for="quantity" class="form-label">구매 수량</label>
-                                                </th>
-                                                <td>
-                                                    <input type="number" class="form-control" min="1" value="1" id="quantity" name="quantity">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </form>
-                                    <!-- <h2 class="card-title" th:text="${vo.title}"></h2>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <input type="hidden" name="stock" id="stock" th:value="${vo.stock}">
+                                <form id="frm">
+                                    <table class="table">
+                                        <tr>
+                                            <th>
+                                                <label class="form-label">도서명</label>
+                                            </th>
+                                            <td>
+                                                <span th:text="${vo.title}" id="title"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="form-label">저자</label>
+                                            </th>
+                                            <td>
+                                                <span th:text="${vo.author}" id="author"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="form-label">가격</label>
+                                            </th>
+                                            <td>
+                                                <span th:text="|${#numbers.formatInteger(vo.price, 3, 'COMMA')}원|"
+                                                    id="price"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label class="form-label">재고</label>
+                                            </th>
+                                            <td>
+                                                <span th:text="${vo.stock}" id="stock"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="quantity" class="form-label">구매 수량</label>
+                                            </th>
+                                            <td>
+                                                <input type="number" class="form-control" min="1" value="1"
+                                                    id="quantity" name="quantity">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                                <!-- <h2 class="card-title" th:text="${vo.title}"></h2>
                                     <p class="card-text"><small class="text-body-emphasis"
                                             th:text="|${vo.title} 저자(글)|"></small></p>
                                     <p class="card-text"><small class="text-body-secondary">[[${vo.publisher}]] |
                                             [[${vo.releaseDate}]]</small></p>
                                     <p class="card-text" th:text="|${vo.price}원|"></p> -->
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="text-center mt-3">
-                        <button type="button" class="btn btn-primary me-2" th:onclick="goOrder([[${vo.bookId}]])">결제하기</button>
-                        <button type="button" class="btn btn-success me-2" th:onclick="goBasket([[${vo.bookId}]])">장바구니에 넣기</button>
-                        <button type="button" class="btn btn-secondary" onclick="goList()">취소</button>
-                    </div>
-                </section>
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-primary me-2"
+                        th:onclick="goOrder([[${vo.bookId}]])">결제하기</button>
+                    <button type="button" class="btn btn-success me-2" th:onclick="goBasket([[${vo.bookId}]])">장바구니에
+                        넣기</button>
+                    <button type="button" class="btn btn-secondary" onclick="goList()">취소</button>
+                </div>
             </section>
-        </main>
-        <script>
+        </section>
+    </main>
+    <script>
 
-            function validated() {
+        function validated() {
+            const quantity = $('#quantity').val();
+            const stock = $('#stock').val();
+
+            if (Number.isNaN(quantity)) {
+                alert('올바른 수량을 입력해주세요.');
+                return false;
+            } else if (Number(quantity) <= 0) {
+                alert('도서는 1개 이상만 구매 가능합니다.');
+                return false;
+            } else if (Number(quantity) > Number(stock)) {
+                alert('구매 수량은 재고를 초과할 수 없습니다.');
+                return false;
+            }
+
+            return true;
+        }
+
+        const goOrder = async (bookId) => {
+            if (validated()) {
+
                 const quantity = $('#quantity').val();
-                const stock = $('#stock').val();
+                const bookList = [
+                    { bookId: Number(bookId), quantity: Number(quantity) }
+                ];
 
-                if (Number.isNaN(quantity)) {
-                    alert('올바른 수량을 입력해주세요.');
-                    return false;
-                } else if (Number(quantity) <= 0) {
-                    alert('도서는 1개 이상만 구매 가능합니다.');
-                    return false;
-                } else if (Number(quantity) > Number(stock)){
-                    alert('구매 수량은 재고를 초과할 수 없습니다.');
-                    return false;
+                const dataParam = {
+                    bookList: bookList
                 }
 
-                return true;
-            }
-
-            const goOrder = async (bookId)=>{
-                if (validated()) {
-
-                    const quantity = $('#quantity').val();
-                    const bookList = [
-                        { bookId: Number(bookId), quantity: Number(quantity)}
-                    ];
-
-                    const dataParam = {
-                        bookList: bookList
+                const headers = {
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
-                    
-                    const headers = {
-                        headers: {
-                            'Content-Type': 'application/json'
+                }
+
+                axios.post('/api/v1/order', JSON.stringify(dataParam), headers)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('도서 결제가 완료됐습니다.');
+                            location.href = '/book/list';
+                        } else {
+                            alert('도서 결제에 실패했습니다.');
                         }
-                    }
-                    
-                    axios.post('/api/v1/order', JSON.stringify(dataParam), headers)
-                        .then((resp) => {
-                            if (resp.data.resultCode === 200) {
-                                alert('도서 결제가 완료됐습니다.');
-                                location.href = '/book/list';
-                            } else {
-                                alert('도서 결제에 실패했습니다.');
-                            }
-                        }).catch((err) => {
-                            // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
-                            //alert(err);
-                        });
-                    
-                }
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
+
             }
+        }
 
-            const goBasket = async (bookId)=>{
-                if (validated()) {
+        const goBasket = async (bookId) => {
+            if (validated()) {
 
-                    const quantity = $('#quantity').val();
-                    const book = { bookId: Number(bookId), quantity: Number(quantity)};
+                const quantity = $('#quantity').val();
+                const book = { bookId: Number(bookId), quantity: Number(quantity) };
 
-                    const dataParam = {
-                        book: book
+                const dataParam = {
+                    book: book
+                }
+
+                const headers = {
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
-                    
-                    const headers = {
-                        headers: {
-                            'Content-Type': 'application/json'
+                }
+
+                axios.post('/api/v1/basket', JSON.stringify(dataParam), headers)
+                    .then((resp) => {
+                        if (resp.data.resultCode === 200) {
+                            alert('장바구니에 추가했습니다.');
+                            location.href = '/book/list';
+                        } else {
+                            alert('장바구니 추가에 실패했습니다.');
                         }
-                    }
-                    
-                    axios.post('/api/v1/basket', JSON.stringify(dataParam), headers)
-                        .then((resp) => {
-                            if (resp.data.resultCode === 200) {
-                                alert('장바구니에 추가했습니다.');
-                                location.href = '/book/list';
-                            } else {
-                                alert('장바구니 추가에 실패했습니다.');
-                            }
-                        }).catch((err) => {
-                            // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
-                            //alert(err);
-                        });
-                    
-                }
-            }
+                    }).catch((err) => {
+                        // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.
+                        //alert(err);
+                    });
 
-            const goList = ()=>{
-                location.href = '/book/list';
             }
+        }
 
-        </script>
-    </div>
+        const goList = () => {
+            location.href = '/book/list';
+        }
+
+    </script>
+</div>
+
 </html>
