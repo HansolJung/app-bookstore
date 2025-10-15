@@ -140,9 +140,15 @@
         }
 
         function getData() {
+            const headers = {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+
             axios.get('/api/v1/book/list', {
                 params: makeSearchParam()
-            }).then((res) => {
+            }, headers).then((res) => {
                 drawBookList(res.data);
             }).catch((err) => {
                 // axiosCommon.js 에서 응답을 가로채기 때문에 또 alert 창을 띄울 필요는 없음.

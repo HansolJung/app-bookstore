@@ -120,7 +120,13 @@
         }
 
         async function getSearchData() {
-            const res = await axios.get('/api/v1/admin/user', { params: makeSearchParam() });
+            const headers = {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+
+            const res = await axios.get('/api/v1/admin/user', { params: makeSearchParam() }, headers);
             drawList(res.data);
         }
 

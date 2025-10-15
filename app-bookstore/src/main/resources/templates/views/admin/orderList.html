@@ -133,6 +133,7 @@
                     "X-Requested-With": "XMLHttpRequest"
                 }
             }
+
             axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)
                 .then((resp) => {
                     if (resp.data.resultCode === 200) {
@@ -162,7 +163,13 @@
         }
 
         async function getSearchData() {
-            const res = await axios.get('/api/v1/admin/order/list', { params: makeSearchParam() });
+            const headers = {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+
+            const res = await axios.get('/api/v1/admin/order/list', { params: makeSearchParam() }, headers);
             drawList(res.data);
         }
 

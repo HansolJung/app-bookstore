@@ -290,7 +290,13 @@
                 return false;
             }
 
-            axios.delete(`/api/v1/admin/user/${userId}`)
+            const headers = {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+
+            axios.delete(`/api/v1/admin/user/${userId}`, headers)
                 .then((resp) => {
                     if (resp.data.resultCode === 200) {
                         alert('회원이 삭제처리되었습니다.');

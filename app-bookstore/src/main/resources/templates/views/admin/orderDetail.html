@@ -129,6 +129,7 @@
                     "X-Requested-With": "XMLHttpRequest"
                 }
             }
+
             axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)
                 .then((resp) => {
                     if (resp.data.resultCode === 200) {

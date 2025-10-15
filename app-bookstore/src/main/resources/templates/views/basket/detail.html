@@ -112,9 +112,15 @@
     </main>
     <script>
 
+        const headers = {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        }
+
         const order = (userId) => {
             if (confirm('장바구니에 있는 도서들을 전부 주문하시겠습니까?')) {
-                axios.post(`/api/v1/basket/order/${userId}`)
+                axios.post(`/api/v1/basket/order/${userId}`, null, headers)
                     .then((resp) => {
                         if (resp.data.resultCode === 200) {
                             alert('장바구니에 있는 도서들을 주문했습니다.');
@@ -132,7 +138,7 @@
         const del = (basketId) => {
             if (confirm('해당 도서를 장바구니에서 삭제하시겠습니까?')) {
                 const userId = $('#userId').val();
-                axios.delete(`/api/v1/basket/${basketId}`)
+                axios.delete(`/api/v1/basket/${basketId}`, headers)
                     .then((resp) => {
                         if (resp.data.resultCode === 200) {
                             alert('장바구니에서 삭제했습니다.');
@@ -149,7 +155,7 @@
 
         const empty = (userId) => {
             if (confirm('장바구니를 전부 비우시겠습니까?')) {
-                axios.delete(`/api/v1/basket/empty/${userId}`)
+                axios.delete(`/api/v1/basket/empty/${userId}`, headers)
                     .then((resp) => {
                         if (resp.data.resultCode === 200) {
                             alert('장바구니를 성공적으로 비웠습니다.');
@@ -176,6 +182,7 @@
                     "X-Requested-With": "XMLHttpRequest"
                 }
             }
+
             axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)
                 .then((resp) => {
                     if (resp.data.resultCode === 200) {

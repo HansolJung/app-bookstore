@@ -77,7 +77,13 @@
 
         async function getSearchData() {
             const userId = $('#userId').val();
-            const res = await axios.get(`/api/v1/order/list/${userId}`, { params: makeSearchParam() });
+            const headers = {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }
+
+            const res = await axios.get(`/api/v1/order/list/${userId}`, { params: makeSearchParam() }, headers);
             drawList(res.data);
         }
 
