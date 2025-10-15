@@ -128,6 +128,12 @@ public class BookService {
     public Map<String, Object> createBook(BookDTO.Request request) throws Exception {
         Map<String, Object> resultMap = new HashMap<>();
 
+        MultipartFile mainImage = request.getMainImage();
+
+        if (mainImage == null || mainImage.isEmpty()) {   // 메인 이미지가 없거나 빈 파일일 경우
+            throw new RuntimeException("메인 이미지는 필수입니다.");
+        }
+
         // 메인 이미지 파일 업로드
         Map<String, Object> mainImageMap = uploadImageFiles(request.getMainImage());
 

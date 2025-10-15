@@ -82,11 +82,13 @@
                             <td th:text="${item.status}"></td>
                             <td th:text="${#temporals.format(item.orderDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-outline-primary" th:if="${#strings.equals(item.status, '주문완료')}"
+                                <button type="button" class="btn btn-outline-primary"
+                                    th:if="${#strings.equals(item.status, '주문완료')}"
                                     th:onclick="delivery([[${item.orderId}]])">배송하기</button>
                             </td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-outline-secondary" th:if="${#strings.equals(item.status, '주문완료')}"
+                                <button type="button" class="btn btn-outline-secondary"
+                                    th:if="${#strings.equals(item.status, '주문완료')}"
                                     th:onclick="cancel([[${item.orderId}]])">취소하기</button>
                             </td>
                         </tr>
@@ -107,19 +109,19 @@
             location.href = `/admin/order/detail/${bookId}`;
         }
 
-        const delivery = (orderId)=>{
+        const delivery = (orderId) => {
             if (confirm('해당 주문을 배송완료 상태로 변경하시겠습니까?')) {
                 updateStatus(orderId, '배송완료', '주문 상태가 배송완료로 변경되었습니다.');
             }
         }
 
-        const cancel = (orderId)=>{
+        const cancel = (orderId) => {
             if (confirm('해당 주문을 주문취소 상태로 변경하시겠습니까?')) {
                 updateStatus(orderId, '주문취소', '주문 상태가 주문취소로 변경되었습니다.');
             }
         }
 
-        const updateStatus = (orderId, newStatus, alertMessage)=>{
+        const updateStatus = (orderId, newStatus, alertMessage) => {
             const dataParam = {
                 orderId: orderId,
                 newStatus: newStatus
@@ -127,7 +129,8 @@
 
             const headers = {
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "X-Requested-With": "XMLHttpRequest"
                 }
             }
             axios.put('/api/v1/admin/order/status', JSON.stringify(dataParam), headers)

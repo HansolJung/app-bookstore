@@ -110,7 +110,7 @@ public class BookDTO {
             List<BookFileDTO> fileList = 
                 entity.getFileList().stream().map(BookFileDTO::of)
                 .sorted((o1, o2)-> o2.getMainYn().equals("Y") ? 1 : -1).toList();
-            
+
             CategoryEntity categoryEntity = entity.getCategory();
 
             return Detail.builder()
