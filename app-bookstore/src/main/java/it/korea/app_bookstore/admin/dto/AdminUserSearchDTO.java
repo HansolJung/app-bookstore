@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class AdminUserSearchDTO {
-    //private String searchType;
+    
     private String searchText;
     private String delYn;
 }

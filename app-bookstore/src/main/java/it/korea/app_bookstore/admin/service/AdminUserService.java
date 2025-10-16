@@ -69,12 +69,6 @@ public class AdminUserService {
 
         Page<UserEntity> pageList = null;
 
-        // if (StringUtils.isNotBlank(searchDTO.getSearchText())) {
-        //     pageList = userRepository.findByUserIdContainingOrUserNameContaining(searchDTO.getSearchText(), searchDTO.getSearchText(), pageable);
-        // } else {
-        //     pageList = userRepository.findAll(pageable);
-        // }
-
         UserSearchSpecification searchSpecification = new UserSearchSpecification(searchDTO);
         pageList = userRepository.findAll(searchSpecification, pageable);
 
@@ -103,7 +97,6 @@ public class AdminUserService {
             .orElseThrow(()-> new RuntimeException("회원 없음"));
 
         return AdminUserDTO.of(user);
-       // return AdminUserDTO.of(userRepository.findById(userId).orElseThrow(()-> new RuntimeException("회원 없음")));
     }
 
     /**

@@ -156,7 +156,7 @@ public class BookDTO {
 		// 메인 이미지
 		private MultipartFile mainImage;
 
-        // 이미지
+        // 기타 이미지
         private List<MultipartFile> image;
 	}
 }

@@ -84,12 +84,6 @@ public class BookService {
 
         Page<BookEntity> pageList = null;
 
-        // if (StringUtils.isNotBlank(searchDTO.getSearchText())) {
-        //     pageList = userRepository.findByUserIdContainingOrUserNameContaining(searchDTO.getSearchText(), searchDTO.getSearchText(), pageable);
-        // } else {
-        //     pageList = userRepository.findAll(pageable);
-        // }
-
         BookSearchSpecification searchSpecification = new BookSearchSpecification(searchDTO);
         pageList = bookRepository.findAll(searchSpecification, pageable);
 
@@ -332,7 +326,7 @@ public class BookService {
     }
 
     /**
-     * 도서 삭제
+     * 도서 삭제(실제로 삭제되지는 않음. 삭제 여부만 변경)
      * @param bookId 도서 아이디
      * @param request
      * @return
@@ -344,21 +338,15 @@ public class BookService {
 
         BookEntity entity = bookRepository.getBook(bookId)   // fetch join 을 사용한 getBook 메서드 호출
             .orElseThrow(()-> new RuntimeException("도서 없음"));
-        entity.setDelYn("Y");  // 삭제 여부 Y로 변경
-        
-        //BookDTO.Detail detail = BookDTO.Detail.of(entity);
+        entity.setDelYn("Y");  // 삭제 여부 Y로 변경    
 
         bookRepository.save(entity);
 
-        // 실제 파일 삭제는 제일 마지막에 진행
-        // if (detail.getFileList() != null && detail.getFileList().size() > 0) {
-        //     for (BookFileDTO fileDTO : detail.getFileList()) {
-        //         deleteImageFiles(fileDTO);
-        //     }
-        // }
-
         // 모든 사람들의 장바구니에서 해당 도서들 전부 삭제하기
         basketRepository.deleteAllByBook_bookId(entity.getBookId());
+
+        // 도서의 삭제 여부를 Y 로 변경만하고 도서의 이미지들도 삭제하지 않음
+        // 왜냐하면 주문 내역 등에서 해당 도서의 상세 정보를 보여줘야 하기 때문
 
         resultMap.put("resultCode", 200);
         resultMap.put("resultMsg", "OK");

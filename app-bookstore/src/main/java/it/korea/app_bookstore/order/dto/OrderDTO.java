@@ -28,12 +28,10 @@ public class OrderDTO {
         private String status;
         private String userName;
         private String userId;
-        //private List<OrderItemDTO> itemList;
      
         public static Response of(OrderEntity entity) {
             
             UserSecureDTO user = new UserSecureDTO(entity.getUser());
-            //List<OrderItemDTO> itemList = entity.getItemList().stream().map(OrderItemDTO::of).toList();
 
             return Response.builder()
                 .orderId(entity.getOrderId())
@@ -42,7 +40,6 @@ public class OrderDTO {
                 .status(entity.getStatus())
                 .userName(user.getUserName())
                 .userId(user.getUserId())
-                //.itemList(itemList)
                 .build();
         }
     }
@@ -90,8 +87,8 @@ public class OrderDTO {
 
     @Data
     public static class InnerRequest {
+        
         private int bookId;
         private int quantity;
-
     }
 }

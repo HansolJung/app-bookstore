@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class OrderSearchDTO {
+    
     private String searchText;
     private String status;
     private String userId;
