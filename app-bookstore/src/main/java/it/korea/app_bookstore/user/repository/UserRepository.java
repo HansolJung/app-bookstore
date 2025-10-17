@@ -16,10 +16,10 @@ import it.korea.app_bookstore.user.entity.UserEntity;
 
 public interface UserRepository extends JpaRepository<UserEntity, String>, JpaSpecificationExecutor<UserEntity> {
 
-    @EntityGraph(attributePaths = {"role"})   // 전체 유저 리스트 가져올 때 N+1 현상 해결
+    @EntityGraph(attributePaths = {"role"})   // N+1 현상 해결
     Page<UserEntity> findAll(Pageable pageable);
 
-    @EntityGraph(attributePaths = {"role"})   // 전체 유저 리스트 가져올 때 N+1 현상 해결
+    @EntityGraph(attributePaths = {"role"})   // N+1 현상 해결
     Page<UserEntity> findAll(Specification<UserEntity> searchSpecification, Pageable pageable);
 
     @Query(value = """

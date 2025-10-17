@@ -16,18 +16,21 @@ import it.korea.app_bookstore.book.entity.BookEntity;
 public interface BookRepository extends JpaRepository<BookEntity, Integer>, JpaSpecificationExecutor<BookEntity>{
 
 
-    @EntityGraph(attributePaths = {"fileList", "category"})   // 전체 유저 리스트 가져올 때 N+1 현상 해결
+    @EntityGraph(attributePaths = {"fileList", "category"})   // N+1 현상 해결
     Page<BookEntity> findAll(Pageable pageable);
 
-    @EntityGraph(attributePaths = {"fileList", "category"})   // 전체 유저 리스트 가져올 때 N+1 현상 해결
+    @EntityGraph(attributePaths = {"fileList", "category"})   // N+1 현상 해결
     Page<BookEntity> findAll(Specification<BookEntity> searchSpecification, Pageable pageable);
 
-    @EntityGraph(attributePaths = {"fileList", "category"})   // 전체 유저 리스트 가져올 때 N+1 현상 해결
+    @EntityGraph(attributePaths = {"fileList", "category"})   // N+1 현상 해결
     Page<BookEntity> findAllByDelYn(String delYn, Pageable pageable);
     
     // fetch join 사용해서 N + 1 문제 해결
-    @Query(value = """
-        select b from BookEntity b left join fetch b.fileList where b.bookId =:bookId
-        """)
+    @Query("""
+        select distinct b from BookEntity b
+        left join fetch b.category
+        left join fetch b.fileList
+        where b.bookId = :bookId
+    """)
     Optional<BookEntity> getBook(@Param("bookId") int bookId);
 }
