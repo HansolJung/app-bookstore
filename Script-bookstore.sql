@@ -39,14 +39,14 @@ create table kb_users(
 );
 
 /* 어드민 유저 insert (비밀번호 1234) */
-insert into kb_users (user_id, passwd, user_name, birth, gender, phone, email, addr, user_role)
+insert into kb_users (user_id, passwd, user_name, birth, gender, phone, email, addr, deposit, user_role)
 values('admin', '$2a$10$8QleDVBEZYfrYrcrM9nRKuWIiqb15STUzGsY5jHRv0i0KGuU.9H5y', 
-'관리자', '901011', '남자', '010-5555-4444', 'admin@gmail.com', '서울시 성북구', 'ADMIN');
+'관리자', '901011', '남자', '010-5555-4444', 'admin@gmail.com', '서울시 성북구', 100000, 'ADMIN');
 
 /* 일반 사용자 insert (비밀번호 1234) */
-insert into kb_users (user_id, passwd, user_name, birth, gender, phone, email, addr, user_role)
+insert into kb_users (user_id, passwd, user_name, birth, gender, phone, email, addr, deposit, user_role)
 values('user', '$2a$10$8QleDVBEZYfrYrcrM9nRKuWIiqb15STUzGsY5jHRv0i0KGuU.9H5y', 
-'사용자', '981227', '여자', '010-2222-3333', 'user@gmail.com', '서울시 구로구', 'USER');
+'사용자', '981227', '여자', '010-2222-3333', 'user@gmail.com', '서울시 구로구', 100000, 'USER');
 
 /* 일반 사용자들 insert (비밀번호 1234) */
 insert into kb_users (user_id, passwd, user_name, birth, gender, phone, email, addr, user_role)
